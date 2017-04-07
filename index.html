@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel = "stylesheet" href = "my_screen.css"/>
+<title>My Screen</title>
+
+</head>
+<body>
+  <div class = "navBar">
+    <ul>
+      <li>
+        <input type = "button" id = "modalActive" value = "add data here"/>
+      </li>
+    </ul>
+  <div class = "modal">
+    <div class = "title">
+      <h1>Dyllon's Fittness app</h2>
+      </div>
+    </div>
+    <h3>Top Four fittness processes </h3>
+    <div class = "imagesPopping">
+      <img src = ""/>
+      <img src = ""/>
+      <img src = ""/>
+      <img src = ""/>
+    </div>
+    <h3>Search For Fittness Tips</h3>
+    <div id = "searchBox">
+      <div class = "searchForm">
+      <table id = "#search">
+        <tr>
+          <td>
+            <label>Diet</label>
+          </td>
+          <td>
+            <select id = "chooseDietProcess">
+              <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "dietList">
+                <option name ="diet">{{diet}}</option>
+             </script>
+           </select>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           <label>Exercise</label>
+         </td>
+         <td>
+           <select id = "chooseExerciseProcess">
+             <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "exerciseList">
+              <option name ="exercise">{{exercise}}</option>
+            </script>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label>Eating Healthy</label>
+        </td>
+        <td>
+          <select id = "chooseHealthyFood">
+            <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "eatHealthyList">
+              <option name="Eating Healthy">{{Eating Healthy}}</option>
+            </script>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label>Serials</label>
+        </td>
+        <td>
+          <select id = "ChooseProperSerials">
+            <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "serials">
+              <option name ="Serials">{{serials}}</option>
+            </script>
+          </select>
+        </td>
+        </tr>
+      </table>
+      <div class = "button">
+        <input type = "button" value = "search" id = "searchBTN"/>
+      </div>
+    </div>
+  </div>
+  <h3>Results</h3>
+  <div class = "display">
+    <div class = "searchResults">
+      <ul class = "ul">
+        <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "outputItems">
+          <li>Diet Process{{diet}}</li>
+          <li>Exercise Process{{exercise}}</li>
+          <li>Eating Healthy Process{{eating healthy}}</li>
+          <li>Serials{{Proper Serials}}</li>
+        </script>
+      </ul>
+    </div>
+  </div>
+
+  <div class = "box2">
+    <div class = "addingData">
+      <h3 id = "addNewData">Add New Fittness Process</h3>
+      <table>
+        <tr>
+          <td>Diet</td>
+          <td><input type = "text" name = "diet" process = "dietFoodProcess" id = "addedDiet" /></td>
+        </tr>
+        <tr>
+          <td>Exercise</td>
+          <td>
+            <input type = "text" name = "exercise" process = "exerciseProcess" id = "addedExercise" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Eating healthy</td>
+          <td>
+            <input type = "text" name = "eating healthy" process = "eatingHealthyProcess" id = "addedHealthyEating"/>
+          </td>
+        </tr>
+        <tr>
+          <td>Serials</td>
+          <td>
+            <input type = "text" name = "serials" process = "serialsProcess" id = "addedSerials"/>
+          </td>
+        </tr>
+
+        <select>
+          <option name = "addedDiet" value = "dietProducts">dietProducts</option>
+          <option name = "addedExercise" value = "exerciseProcesses">exerciseProcesses</option>
+          <option name = "addedHealthyEating" value = "eatingHealthyProcess">eatingHealthyProcess</option>
+        </select>
+<hr>
+      <!-- <h5 class = "close">X</h5> -->
+      <input type = "button" id = "successBTN" value = "Fantastic!!"/>
+    </div>
+  </div>
+
+<script src = "handlebars-v4.0.5.js" charset = "utf-8"></script>
+<script src = "my_screen.js" charset = "utf-8"></script>
+</body>
+
+</html>
