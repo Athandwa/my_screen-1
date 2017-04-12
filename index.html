@@ -16,70 +16,136 @@
         </ul>
         <div class="modal">
             <div class="title">
-                <h1>Dyllon's Hotels!</h2>
+                <h1>Sport Overview!</h2>
         <hr>
-        <div id = "">
+        <h2>Edition:</h2>
+         <select>
+           <option value="international">International</option>
+           <option value="south africa">South Africa</option>
+         </select>
+         <div class="Button">
+           <br>
+           <input type="button" value="GO" id="goBTN">
+           <input type="button" value="Menu" id="menuBTN">
+           <hr>
+         </div>
+         <div class ="navBar1">
+           <h3>FootBall Today</h3>
 
-          <h2>select your check_in and checkout_out date as well as option room</h2>
-          <table id ="checkList" border='1px'>
-              <tr>
-              <td>check in date</td>
-              <td><input type="date" id="selectCheckInDate" onchange="FirstDateInput()"></td>
-              <td>check out date</td>
-              <td><input type="date" id="selectCheckOutDate" onchange="SecondDateInput()"></td>
-              <td>double room/single/family/multiple</td>
-             </tr>
-            </table>
-          </div>
+           <ul>
+
+               <h3>UEFA Champions League</h3>
+               <input type="button" name="answer" value="Show Fixtures" onclick="showFixtures()"/>
+            <div id="todaysFixtures" style="display:none;" class="answer_List">
+            <li>
+                  12 April 2017:
+                 18:45
+                 Borussia Dortnumd
+                        vs
+                      Monaco
+                 Staduim:
+                 Signal-Iduna-Park
+               </li>
+               <li>
+                 12 April 2017:
+                 20:45
+                 Bayern Munchen
+                       vs
+                   Real Madrid
+                   Staduim:
+                   Allianz-Arena
+               </li>
+               <li>
+                 12 April 2017:
+               </li>
+               <ul>
+                      20:45
+                    </ul>
+                    <ul>  Atletico Madrid
+                             vs
+                        Leicester City
+                     </ul>
+                     <ul>
+                       Staduim:King Power Staduim
+                     </ul>
+               </ul>
+             </div>
+
+             <input type="button" name="answer" value="Show Results" onclick="showResults()"/>
+
+                 <div id="results" style="display:none;" class="answer_List">
+                   <ul>
+                  <li>   11 April 2017:
+                   Juventus : 3
+                     Barcelona : 0
+                   </li>
+                 </ul>
+                   </li>
+
+                 </div>
+
+
+               <input type="button" name="answer" value="Show Groups" onclick="showGroups()"/>
+                <div id="groups" style="display:none:" class="answer_List">
+                  <table>
+                    <tr>
+                    <th>Team</th>
+                    <th>P</th>
+                    <th>W</th>
+                    <th>Gd</th>
+                    <th>Pts</th>
+                  </tr>
+                  <tr>
+                    <td>Arsenal</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>12</td>
+                    <td>14</td>
+                  <tr>
+                    <td>PSG</td>
+                    <td>6</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>12</td>
+                  </tr>  
+                  </table>
+             </li>
+             <hr>
+             <li>
+               <h3>English Premier League</h3>
+               <input type="button" id="modalActive" value="Fixtures">
+               |
+               <input type="button" id="modalActive" value="Results">
+               |
+               <input type="button" id="modalActive" value="Table">
+
+            </li>
+            <hr>
+            <li>
+              <h3>ABSA Premiership</h3>
+               <input type="button" id="modalActive" value="Fixtures">
+               |
+               <input type="button" id="modalActive" value="Results">
+               |
+               <input type="button" id="modalActive" value="Table">
+
+           <hr>
+             </li>
+           </ul>
+         </div>
+         <h3>Results</h3>
+         <div class = "display">
+           <div class = "searchResults">
+             <ul class="ul">
+              <script src="my_screen.js" type="text/x-handlebars-some-template" id="outputItems">
+              <li>Fixtures{{fixtures}}</li>
+              <li>Results{{results}}</li>
+              <li>Table{{table}}</li>
+            </script>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <h3>Top Four Hotels That Would Amaze You!!</h3>
-    <div class = "imagesPopping">
-      <table border="5px">
-        <tr>
-      <td><img src = "https://imgec.trivago.com/partnerimages/11/07/110730130_x.jpeg"width="250px" height="150px"/>
-<tr>
-<th>price</th>
-<td>R1500</td>
-</tr>
-<tr>
-<th>location</th>
-<td>Twelve Apostles</<td>
-</tr>
-      </tr>
-      <tr>
-    <td>  <img src = "https://imgec.trivago.com/partnerimages/11/07/110730134_x.jpeg"width="250px" height="150px"/></td>
-    <tr>
-      <th>price</th>
-        <td>1700</td>
-      </tr>
-      <tr>
-        <th>location</th>
-        <td>Cape Grace</td>
-      </tr>
-      <tr>
-      <td><img src = "https://imgec.trivago.com/partnerimages/11/07/110730142_x.jpeg"width="250px" height="150px"/></td>
-      <tr>
-        <th>price</th>
-        <td>2225</td>
-      </tr>
-      <th>location</th>
-      <td>Belmond Mount Nelson Hotel</td>
-    </tr>
-
-    <td>  <img src = "https://imgec.trivago.com/partnerimages/11/07/110730150_x.jpeg"width="150px" height="150"/></td>
-    <tr>
-      <th>price</th>
-      <td>3000</td>
-      <tr>
-        <th>locaton</th>
-        <td>One & Only Cape Town</td>
-      </tr>
-    </table>
-    </div>
-  </div>
-    <hr>
     <!-- <h3></h3>
     <div id = "searchBox">
       <div class = "searchForm">
