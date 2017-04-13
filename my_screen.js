@@ -1,98 +1,55 @@
-var optionList = [{
-             country: "Nigeria",
-             updates: "Matches",
-             news   : "new manager on the loose for world cup journey"
-           },
-           {
-             country: "International",
-             updates: "Matches",
-             news   : "Mourinho see fit to win english premier league"
-           },
-];
-var fixtureButton = document.getElementById('fixtureBTN');
-var resultButton = document.getElementById('resultBTN');
-var tableButton = document.getElementById('tableBTN');
-var ul = document.querySelector('.ul');
-var goButton = document.getElementById('goBTN');
-
-var sourceResults = document.getElementById('outputItems').innerHTML;
-var  templateResults = Handlebars.compile(sourceResults);
-
-var display = document.querySelector('.searchResults');
+var fixturesAsSource = document.getElementById('fixtures');
+var template = Handlebars.compile(fixturesAsSource.innerHTML);
+// you wanna target your empty div in order to write your result
 
 
+
+var EUFA_ChampionsLeague_Ranks = [{
+                      team: "Arsenal",
+                      gamesPlayed: 6,
+                      gamesWon : 4,
+                      goalDifference: 12,
+                      points: 14
+                    }
+                  ]
+
+var EUFA_ChampionsLeague_Results = [{
+            team : "Juventus vs Barcelona",
+            date : "11 April 2017",
+            time : "20:45",
+            venue :"Old Trafford",
+            score : [{Juventus:3} , {Barcelona: 0}]
+          }
+        ]
+        var EUFA_ChampionsLeague_upComing = [{
+                team: "Borussia dotmund vs Monaco",
+                date: "12 April 2017",
+                time: "18:45",
+                venue: "Signal-Iduna-Park",
+                score: "?"
+            },
+            {
+                team: "Bayern Munchen vs Real Madrid",
+                date: "12 April 2107",
+                time: "20:45",
+                venue: "Allianz-Arena",
+                score: "?"
+            },
+            {
+                team: "Atletica Madrid vs Leicester City",
+                date: "12 April 2017",
+                time: "20:45",
+                venue: "King Power Staduim",
+                score: "?"
+            }
+
+        ];
+
+// call the variable called template and give it an object key that you referenced within your html file and pair your key with your list of objects or array
 function showFixtures(){
-  document.getElementById('todaysFixtures').style.display = "block";
-}
+console.log(EUFA_ChampionsLeague_upComing);
 
-function showResults(){
-  document.getElementById('results').style.display = "block";
-}
-goButton.addEventListener('click', function() {
-  var inCountry = checkForCountry();
-  var getUpdates = checkForUpdates();
-
-  var storeOutPut = [inCountry, getUpdates];
-
-filterBtn.addEventListener('click', function() {
-  var printedCountries = document.querySelector('.Countries');
-  for(var i = 0; i < 2; i++){
-    switch (i) {
-      case 0:
-            filter('Nigeria')
-            break;
-      case 1:
-            filter('South Africa')
-            break;
-      case 2:
-            filter('International')
-            break;
-
-    }
-  }
+ fixturesAsSource =  template({
+  EUFA_ChampionsLeague_upComing: EUFA_ChampionsLeague_upComing, fixturesDisplay:"block"
 });
-
-  var searchResults = [{
-      inCountry: selectedCountry.value,
-      updates: getUpdates,
-      news: getNews
-  }];
-  ul.innerHTML = templateResults(searchResults[0]);
-}, false);
-
-
-function checkForCountry() {
-  var countryMap = {};
-
-  var getCountry = getCountry.value;
-  var getUpdates = parseInt(selectedUpdates.value);
-  var getNews    = selectedNews.value;
-
-
 }
-
-//
-// fixtureButton.addEventListener('click', function() {
-//   ul.innerHTML = "";
-//   //get values from functions
-//   var Fixtures = checkForFixtures();
-//   var Results = checkForResults();
-//   var Table = checkForTable();
-//   var storeOutPut = [fixtures, results, table];
-//
-//   if(storeOutPut[1] === "N/A") {
-//     display.classList.remove('active');
-//     ul.style.display = 'none';
-//
-//   }else{
-//     ul.style.display = 'block';
-//     display.className += ' active';
-//   }
-//   var searchResults = [{
-//     Fixtures:getFixtures,
-//     Results: getResults,
-//     Table: getTable
-//   }];
-//   ul.innerHTML = templateResults(searchResults[0]);
-//
-// }, false);

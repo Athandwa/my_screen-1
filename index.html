@@ -36,39 +36,27 @@
 
                <h3>UEFA Champions League</h3>
                <input type="button" name="answer" value="Show Fixtures" onclick="showFixtures()"/>
-            <div id="todaysFixtures" style="display:none;" class="answer_List">
-            <li>
-                  12 April 2017:
-                 18:45
-                 Borussia Dortnumd
-                        vs
-                      Monaco
-                 Staduim:
-                 Signal-Iduna-Park
-               </li>
-               <li>
-                 12 April 2017:
-                 20:45
-                 Bayern Munchen
-                       vs
-                   Real Madrid
-                   Staduim:
-                   Allianz-Arena
-               </li>
-               <li>
-                 12 April 2017:
-               </li>
-               <ul>
-                      20:45
-                    </ul>
-                    <ul>  Atletico Madrid
-                             vs
-                        Leicester City
-                     </ul>
-                     <ul>
-                       Staduim:King Power Staduim
-                     </ul>
-               </ul>
+              <div id="todaysFixtures" style="display:block;" class="answer_List">
+                              //below you are referencing yuor Handlebars object key
+              <script id="fixtures"  type="text/x-handlebars-template">
+                <table>
+                  <tr>
+                  <th>Fixtures</th>
+                </tr>
+                  {{#each EUFA_ChampionsLeague_upComing}}
+                    <tr>
+                      <td>
+                        {{team}}
+                        {{date}}
+                        {{time}}
+                        {{venue}}
+                        {{score}}
+
+                      </td>
+                    </tr>
+                  {{/each}}
+                </table>
+              </script>
              </div>
 
              <input type="button" name="answer" value="Show Results" onclick="showResults()"/>
@@ -102,12 +90,6 @@
                     <td>12</td>
                     <td>14</td>
                   <tr>
-                    <td>PSG</td>
-                    <td>6</td>
-                    <td>3</td>
-                    <td>6</td>
-                    <td>12</td>
-                  </tr>  
                   </table>
              </li>
              <hr>
