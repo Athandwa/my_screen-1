@@ -5,19 +5,148 @@
     <link rel="stylesheet" href="my_screen.css" />
     <title>My Screen</title>
 
+    <!-- <script class='nationsTemplate' type="text/handlebars-x">
+        {{#each nations}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{league}}</td>
+            //
+            <td>{{}}</td>
+        </tr>
+        {{/each}}
+    </script>
+
+    <script class='filterTemplate' type='text/handlebars-x'>
+        <span class='field'>
+<label for='nation'>Nations</label>
+<select class='nations' class='nationFilter'>
+<option value=''>Select</option>
+{{#each nations}}
+<option>{{this}}</option>
+{{/each}}
+</select>
+</span>
+
+        <span class='field'>
+<label for='nation'>Leagues</label>
+<select class='' class='leagueFilter'>
+<option value=''>Select</option>
+{{#each leagues}}
+<option>{{this}}</option>
+{{/each}}
+</select>
+</span>
+        <input type="button" name="filterButton" value="Filter">
+
+    </script> -->
 </head>
 
+
 <body>
-    <div class="navBar">
-        <ul>
-            <li>
-                <input type="button" id="modalActive" value="add data here" />
-            </li>
-        </ul>
-        <div class="modal">
+<div class="output">
+
+</div>
+
+    <h3>FootBall Today</h3>
+    <p>hello and wellcome to football today!!</p>
+    <hr>
+    <div class='field'>
+        <h3>English Premier League:</h3>
+        <input type='button' value='Go' id='goBtn'>
+      </div>
+      <script id='some-template' type='text/x-handlebars-template'>
+        <table>
+          <thead>
+            <th>Team</th>
+            <th>Position</th>
+            <th>Points</th>
+          </thead>
+          <tbody>
+            {{#each teams}}
+            <tr>
+              <td>
+                {{teamName}}
+              </td>
+              <td>
+                {{position}}
+              </td>
+              <td>
+                {{points}}
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </script>
+
+
+        <!-- <h3>ABSA Premier League</h3>
+  <input type='button' name='' value="Go" class='goButton2'> -->
+    <div class="container">
+        <div class="add">
+            <h1>search nation&league:</h1>
+            <div class="field">
+                <label for="nation">Nation</label>
+                <input type="text" name="nation" class="nationName">
+            </div>
+            <div class="field">
+                <label for="league">League</label>
+                <input type="text" name="League" class="league">
+            </div>
+
+            <input type="button" name="" value="search" class="addButton">
+        </div>
+
+    </div>
+    <!-- <div class="">
+        <h1>Filters</h1>
+
+        <div class="filters">
+
+        </div>
+
+    </div>
+
+    <div class="">
+
+    </div> -->
+    <div class="">
+        <h1>results</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="nationList">
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <!-- <div class="navBar"> -->
+    <!-- <ul> -->
+    <!-- <li> -->
+    <!-- <input type="button" id="modalActive" value="add data here" /> -->
+    <!-- </li> -->
+    <!-- </ul> -->
+    <!-- <div class="modal">
             <div class="title">
                 <h1>Sport Overview!</h2>
         <hr>
+        <div class="container">
+          <div class="addingData">
+            <h3 id="HeadingAddNew">Add New Nationality</h3>
+            <table>
+              <tr>
+                <td>Nation :</td>
+                <td><input type="text" name="nationality" id="addedNation"/></td>
+              </tr>
+            </table>
+          </div>
+        </div>
         <h2>Edition:</h2>
          <select>
            <option value="international">International</option>
@@ -35,31 +164,26 @@
            <ul>
 
                <h3>UEFA Champions League</h3>
-               <input type="button" name="answer" value="Show Fixtures" onclick="showFixtures()"/>
-              <div id="todaysFixtures" style="display:block;" class="answer_List">
-                              //below you are referencing yuor Handlebars object key
-              <script id="fixtures"  type="text/x-handlebars-template">
-                <table>
-                  <tr>
-                  <th>Fixtures</th>
-                </tr>
-                  {{#each EUFA_ChampionsLeague_upComing}}
-                    <tr>
-                      <td>
-                        {{team}}
-                        {{date}}
-                        {{time}}
-                        {{venue}}
-                        {{score}}
+               <input type="button" value="Show Fixtures" id='fixtureBTN'/>
+              <!-- below you are referencing yuor Handlebars object key -->
+    <script id="fixtures" type="text/x-handlebars-template">
+        <table>
+            <tr>
+                <th>Fixtures</th>
+            </tr>
+            {{#each EUFA_ChampionsLeague_upComing}}
+            <tr>
+                <td>
+                    {{team}} {{date}} {{time}} {{venue}} {{score}}
 
-                      </td>
-                    </tr>
-                  {{/each}}
-                </table>
-              </script>
-             </div>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </script>
+    </div>
 
-             <input type="button" name="answer" value="Show Results" onclick="showResults()"/>
+    <!-- <input type="button" name="answer" value="Show Results" onclick="showResults()"/>
 
                  <div id="results" style="display:none;" class="answer_List">
                    <ul>
@@ -115,7 +239,7 @@
              </li>
            </ul>
          </div>
-         <h3>Results</h3>
+         <h3>Output:</h3>
          <div class = "display">
            <div class = "searchResults">
              <ul class="ul">
@@ -126,7 +250,8 @@
             </script>
           </ul>
         </div>
-      </div>
+      </div> -->
+
 
     <!-- <h3></h3>
     <div id = "searchBox">
@@ -236,12 +361,12 @@
         </select>
 <hr>
       <!-- <h5 class = "close">X</h5> -->
-      <!-- <input type = "button" id = "successBTN" value = "Fantastic!!"/> -->
+    <!-- <input type = "button" id = "successBTN" value = "Fantastic!!"/> -->
     <!-- </div> -->
-  <!-- </div> -->
+    <!-- </div> -->
 
-<script src = "handlebars-v4.0.5.js" charset = "utf-8"></script>
-<script src = "my_screen.js" charset = "utf-8"></script>
+    <script src="handlebars-v4.0.5.js" charset="utf-8"></script>
+    <script src="my_screen.js" charset="utf-8"></script>
 </body>
 
 </html>
