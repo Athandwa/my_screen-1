@@ -4,85 +4,129 @@
 <head>
     <link rel="stylesheet" href="my_screen.css" />
     <title>My Screen</title>
-
-    <!-- <script class='nationsTemplate' type="text/handlebars-x">
-        {{#each nations}}
+    <script class='dataTemplate' type='text/Handlebars-x'>
+        {{#each data}}
         <tr>
-            <td>{{name}}</td>
-            <td>{{league}}</td>
-            //
-            <td>{{}}</td>
+            <td>{{teamName}}</td>
+            <td>{{position}}</td>
+            <td>{{points}}</td>
         </tr>
         {{/each}}
     </script>
-
-    <script class='filterTemplate' type='text/handlebars-x'>
+    <script class='filterTemplate' type='text/Handlebars-x'>
         <span class='field'>
-<label for='nation'>Nations</label>
-<select class='nations' class='nationFilter'>
-<option value=''>Select</option>
-{{#each nations}}
-<option>{{this}}</option>
-{{/each}}
-</select>
-</span>
+    <label for='teamName'>TeamNames</label>
+    <select class='data' class='teamNameFilter'>
+    <option value="">Select</option>
+    {{#each TeamNames}}
+    <option>{{this}}</option>
+    {{/each}}
+    </select>
+    </span>
 
         <span class='field'>
-<label for='nation'>Leagues</label>
-<select class='' class='leagueFilter'>
-<option value=''>Select</option>
-{{#each leagues}}
-<option>{{this}}</option>
-{{/each}}
-</select>
-</span>
-        <input type="button" name="filterButton" value="Filter">
+    <label for='position'>Position</label>
+    <select class='data' class='positionFilter'>
+    <option value="">Select</option>
+    {{#each position}}
+    <option>{{this}}</option>
+    {{/each}}
+    </select>
+    </span>
 
-    </script> -->
+
+        <span class='field'>
+        <label for='points'>Points</label>
+        <select class='data' class='pointsFilter'>
+        <option value="">Select</option>
+        {{#each position}}
+        <option>{{this}}</option>
+        {{/each}}
+        </select>
+        </span>
+
+    </script>
+    <!-- <input type="button" name="filterButton" value="Filter"> -->
+
 </head>
 
 
 <body>
-<div class="output">
 
-</div>
+  <h3>FootBall Editing</h3>
+  <p>hello and wellcome to football today!!</p>
+  <hr>
+    <div class='container'>
+        <div class='add'>
+            <h2>add team:</h2>
+            <div class='field'>
+                <label for='teamName'>Team:</label>
+                <input type='text' name='team' class='teamName'>
+            </div>
+            <div class='field'>
+                <label for='position'>Position:</label>
+                <input type='text' name='position' class='position'>
+            </div>
+            <div class='field'>
+                <label for='points'>Points:</label>
+                <input type='text' name='points' class='points'>
+            </div>
+            <div class='button'>
+              <input type='button' name='' value='Add' class='addButton'>
+              <hr>
+            </div>
+        </div>
+    </div>
 
-    <h3>FootBall Today</h3>
-    <p>hello and wellcome to football today!!</p>
-    <hr>
+
+    <p><b>note:these are the two most influencial leagues ever!!</b></p>
     <div class='field'>
         <h3>English Premier League:</h3>
-        <input type='button' value='Go' id='goBtn'>
-      </div>
-      <script id='some-template' type='text/x-handlebars-template'>
+        <ul>
+            <li>
+                <input type='button' value='logs' id='logsBtn'>
+            </li>
+            <br>
+            <li>
+                <input type='button' value='news' id='newsBtn'>
+            </li>
+        </ul>
+
+    </div>
+    <div class="output">
+
+    </div>
+    <script id='some-template' type='text/x-handlebars-template'>
         <table>
-          <thead>
-            <th>Team</th>
-            <th>Position</th>
-            <th>Points</th>
-          </thead>
-          <tbody>
-            {{#each teams}}
-            <tr>
-              <td>
-                {{teamName}}
-              </td>
-              <td>
-                {{position}}
-              </td>
-              <td>
-                {{points}}
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
+            <thead>
+                <th>Team</th>
+                <th>Position</th>
+                <th>Points</th>
+            </thead>
+            <tbody>
+                {{#each teams}}
+                <tr>
+                    <td>
+                        {{teamName}}
+                    </td>
+                    <td>
+                        {{position}}
+                    </td>
+                    <td>
+                        {{points}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
         </table>
-      </script>
+    </script>
+    <hr>
 
 
-        <!-- <h3>ABSA Premier League</h3>
+
+    <!-- <h3>ABSA Premier League</h3>
   <input type='button' name='' value="Go" class='goButton2'> -->
-    <div class="container">
+    <!-- <div class="container">
         <div class="add">
             <h1>search nation&league:</h1>
             <div class="field">
@@ -97,7 +141,7 @@
             <input type="button" name="" value="search" class="addButton">
         </div>
 
-    </div>
+    </div> -->
     <!-- <div class="">
         <h1>Filters</h1>
 
@@ -110,7 +154,7 @@
     <div class="">
 
     </div> -->
-    <div class="">
+    <!-- <div class="">
         <h1>results</h1>
         <table>
             <thead>
@@ -124,7 +168,7 @@
             </tbody>
         </table>
     </div>
-    </div>
+    </div> -->
 
     <!-- <div class="navBar"> -->
     <!-- <ul> -->
@@ -166,22 +210,6 @@
                <h3>UEFA Champions League</h3>
                <input type="button" value="Show Fixtures" id='fixtureBTN'/>
               <!-- below you are referencing yuor Handlebars object key -->
-    <script id="fixtures" type="text/x-handlebars-template">
-        <table>
-            <tr>
-                <th>Fixtures</th>
-            </tr>
-            {{#each EUFA_ChampionsLeague_upComing}}
-            <tr>
-                <td>
-                    {{team}} {{date}} {{time}} {{venue}} {{score}}
-
-                </td>
-            </tr>
-            {{/each}}
-        </table>
-    </script>
-    </div>
 
     <!-- <input type="button" name="answer" value="Show Results" onclick="showResults()"/>
 

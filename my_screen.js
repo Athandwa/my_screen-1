@@ -1,4 +1,4 @@
-var goButton = document.getElementById('goBtn');
+var logsButton = document.getElementById('logsBtn');
 var searchResult = document.querySelector('.output');
 var source = document.getElementById('some-template').innerHTML;
 var template = Handlebars.compile(source);
@@ -43,7 +43,7 @@ var data = [{
   searchResult.innerHTML = leagueTable;
 
 
-  goButton.addEventListener('click', function() {
+  logsButton.addEventListener('click', function() {
       var teamValue = leagueTable.value;
       var positionValue = position.value;
       var pointsValue = points.value;
@@ -53,8 +53,8 @@ var data = [{
           && pointsValue !== '') {
         leagueTable.push({
              teamName:  teamValue,
-             position: positionValue,
-             points : pointsValue
+             data: positionValue,
+             data : pointsValue
         });
 
       }
