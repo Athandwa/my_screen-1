@@ -37,28 +37,18 @@ var data = [{
 
   ];
 
-  var leagueTable = template({
-    teams : data,
-  });
-  searchResult.innerHTML = leagueTable;
-
 
   logsButton.addEventListener('click', function() {
-      var teamValue = leagueTable.value;
-      var positionValue = position.value;
-      var pointsValue = points.value;
 
-      if (teamValue !== ''
-          && positionValue !== ''
-          && pointsValue !== '') {
-        leagueTable.push({
-             teamName:  teamValue,
-             data: positionValue,
-             data : pointsValue
+
+    var leagueTable = template({
+      teams : data,
+    });
+    searchResult.innerHTML = leagueTable;
         });
 
-      }
-    });
+      
+
 
 
 
