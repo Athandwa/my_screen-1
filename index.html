@@ -13,6 +13,18 @@
         </tr>
         {{/each}}
     </script>
+
+    <script class='info-Template' type='text/Handlebars-x'>
+        {{#each info}}
+        {{ManChester_United}}
+         {{/each}}
+    </script>
+    <script class='info-Template2' type='text/Handlebars-x'>
+        {{#each info}}
+        {{Crystal_Palace}}
+         {{/each}}
+    </script>
+
     <script class='filterTemplate' type='text/Handlebars-x'>
         <span class='field'>
     <label for='teamName'>TeamNames</label>
@@ -53,9 +65,9 @@
 
 <body>
 
-  <h3>FootBall Editing</h3>
-  <p>hello and wellcome to football today!!</p>
-  <hr>
+    <h3>FootBall Today</h3>
+    <p>hello and wellcome to football today!!</p>
+    <hr>
     <div class='container'>
         <div class='add'>
             <h2>add team:</h2>
@@ -72,30 +84,35 @@
                 <input type='text' name='points' class='points'>
             </div>
             <div class='button'>
-              <input type='button' name='' value='Add' class='addButton'>
-              <hr>
+                <input type='button' value='Add' id='addBtn'>
+                <hr>
             </div>
         </div>
     </div>
 
 
-    <p><b>note:these are the two most influencial leagues ever!!</b></p>
+    <p><b>information about the english premier league:</b></p>
     <div class='field'>
         <h3>English Premier League:</h3>
-        <ul>
-            <li>
-                <input type='button' value='logs' id='logsBtn'>
-            </li>
-            <br>
-            <li>
-                <input type='button' value='news' id='newsBtn'>
-            </li>
-        </ul>
+        <input type='button' value='logs' id='logsBtn'>
+        <hr>
+        <h2>recently updated news</h2>
+         <ul>
+           <li>
+        <input type='button' value='ManChester United' id='newsBtn'>
+      </li>
+    <br>
+         <li>
+        <input type='button' value='Crystal Palace' id='newsBtn2'>
+      </li>
+      </ul>
+      </div>
 
-    </div>
     <div class="output">
 
     </div>
+
+
     <script id='some-template' type='text/x-handlebars-template'>
         <table>
             <thead>
@@ -122,7 +139,29 @@
     </script>
     <hr>
 
+    <script id='info-Template' type='text/x-handlebars-template'>
+        <ul>
+            <li>
+                <p>ManChester_United</p>
+              </li>
+        </ul>
+        {{#each news}}
+        {{ManChester_United}}
+        {{/each}}
+    </script>
+    <script id='info-Template2' type='text/x-handlebars-template'>
+<ul>
+  <li>
+    <p>Crystal_Palace</p>
+  </li>
+</ul>
+{{#each news}}
+{{Crystal_Palace}}
+{{/each}}
+</script>
+    <div class='results'>
 
+    </div>
 
     <!-- <h3>ABSA Premier League</h3>
   <input type='button' name='' value="Go" class='goButton2'> -->
