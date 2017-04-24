@@ -1,54 +1,121 @@
 var logsButton = document.getElementById('logsBtn');
+var newsButton = document.getElementById('newsBtn');
+var newsButton2 = document.getElementById('newsBtn2');
+var newsResult = document.querySelector('.results');
 var searchResult = document.querySelector('.output');
-var source = document.getElementById('some-template').innerHTML;
-var template = Handlebars.compile(source);
 
+var addButton = document.getElementById('addBtn');
+
+var source = document.querySelector('#info-Template').innerHTML;
+var template = Handlebars.compile(source)
+
+var infoSource = document.querySelector('#info-Template2').innerHTML;
+var templat3 = Handlebars.compile(infoSource);
+
+var source2 = document.getElementById('some-template').innerHTML;
+var template2 = Handlebars.compile(source2);
+
+
+var info = [{
+    ManChester_United: 'ManUtd relieved after a 2-0 victory againts Burnley which drives them closer to fourth place manCity chase.'
+}, ];
+
+var info2 = [{
+    Crystal_Palace: 'Benteke delivers on double gameweek promise.Palace striker delights 148,000+ new backers with 12 points ahead of his second fixture of Gameweek 34.'
+
+}, ];
+
+
+// {
+//  Liverpool: '.'
+// }
 var data = [{
-      teamName: 'Chelsea',
-      position: 1,
-      points : 75
+        teamName: 'Chelsea',
+        position: 1,
+        points: 75
     },
     {
-      teamName: 'Tottenham',
-      position : 2,
-      points : 71
+        teamName: 'Tottenham',
+        position: 2,
+        points: 71
     },
     {
-      teamName: 'Liverpool',
-      position : 3,
-      points : 66
+        teamName: 'Liverpool',
+        position: 3,
+        points: 66
     },
     {
-      teamName: 'Manchester City',
-      position : 4,
-      points : 64
+        teamName: 'Manchester City',
+        position: 4,
+        points: 64
     },
     {
-      teamName: 'Manchester United',
-      position : 5,
-      points : 60
+        teamName: 'Manchester United',
+        position: 5,
+        points: 60
     },
     {
-      teamName: 'Arsenal',
-      position: 6,
-      points: 57
+        teamName: 'Arsenal',
+        position: 6,
+        points: 57
     },
 
 
-  ];
+];
+newsButton2.addEventListener('click', function() {
+    var leagueNews = template({
+        news: info2,
+        // news: info2,
+    });
+    newsResult.innerHTML = leagueNews;
+});
 
+newsButton.addEventListener('click', function() {
+    var leagueNews = template({
+        news: info,
+        // news: info2,
+    });
+    newsResult.innerHTML = leagueNews;
+    // console.log(newsResult.innerHTML);
+});
 
-  logsButton.addEventListener('click', function() {
-
-
-    var leagueTable = template({
-      teams : data,
+logsButton.addEventListener('click', function() {
+    var leagueTable = template2({
+        teams: data,
     });
     searchResult.innerHTML = leagueTable;
-        });
+});
 
-      
+function showData(data) {
+  var teams = [];
+  var position = [];
+  var points = [];
 
+  for (var i = 0; i < data.length; i++) {
+    var teamData = data[i];
+    teams.push(teamData.name);
+    position.push(teamData.name);
+    points.push(teamData.name);
+  }
+}
+
+addButton.addEventListener('click', function() {
+  // alert('hjbjgv');
+  var teamValue = team.value;
+  var positionValue = position.value;
+  var pointsValue = points.value;
+
+  if (teamValue !== ''
+       && positionValue !== ''
+       && pointsValue !== '') {
+         teams.push({
+           name: teamValue,
+           position: positionValue,
+           points: pointsValue
+         });
+       }
+    showData(teams);
+});
 
 
 
