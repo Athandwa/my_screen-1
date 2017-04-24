@@ -8,6 +8,106 @@ body{
 table, th ,td {
   border: 1px dotted black;
 }
+#logsBtn {
+    position: center;
+    margin: 0px -40px;
+    background-color: #4BABBD;
+	color: #fff;
+	width: 150px;
+	height: 30px;
+    border: 1px solid #4BABBD;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 1px 1px grey;
+    -moz-box-shadow: 1px 1px 1px 1px grey;
+    box-shadow: 1px 1px 1px 1px grey;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    transition: 300ms ease-in-out;
+}
+#logsBtn:hover {
+  background-color: #39698B;
+  color: #fff000;
+  width: 70px;
+  border: 3px double-dotted #39698B;
+  cursor: pointer;
+  -webkit-transition: 300ms ease-in-out;
+   -moz-transition: 300ms ease-in-out;
+   transition: 300ms ease-in-out;
+}
+#newsBtn {
+    position: absolute;
+    margin: 0px -40px;
+    background-color: #4BABBD;
+	color: #fff;
+	width: 150px;
+	height: 30px;
+    border: 1px solid #4BABBD;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 1px 1px grey;
+    -moz-box-shadow: 1px 1px 1px 1px grey;
+    box-shadow: 1px 1px 1px 1px grey;
+    -webkit-transition: 300ms ease-in-out;
+    -moz-transition: 300ms ease-in-out;
+    transition: 300ms ease-in-out;
+}
+#newsBtn:hover {
+  background-color: #39698B;
+  color: #fff000;
+  width: 70px;
+  border: 3px double-dotted #39698B;
+  cursor: pointer;
+  -webkit-transition: 150ms ease-in-out;
+   -moz-transition: 150ms ease-in-out;
+   transition: 150ms ease-in-out;
+}
+.output {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 200px;
+  background-color: #808080;
+
+  }
+  #newsBtn2 {
+      position: absolute;
+      margin: 0px -40px;
+      background-color: #4BABBD;
+  	color: #fff;
+  	width: 150px;
+  	height: 30px;
+      border: 1px solid #4BABBD;
+      cursor: pointer;
+      -webkit-box-shadow: 1px 1px 1px 1px grey;
+      -moz-box-shadow: 1px 1px 1px 1px grey;
+      box-shadow: 1px 1px 1px 1px grey;
+      -webkit-transition: 300ms ease-in-out;
+      -moz-transition: 300ms ease-in-out;
+      transition: 300ms ease-in-out;
+  }
+  #newsBtn2:hover {
+    background-color: #39698B;
+    color: #fff000;
+    width: 70px;
+    border: 3px double-dotted #39698B;
+    cursor: pointer;
+    -webkit-transition: 150ms ease-in-out;
+     -moz-transition: 150ms ease-in-out;
+     transition: 150ms ease-in-out;
+  }
+
+/*.searchResults {
+	justify-content: center;
+	align-items: center;
+	margin: 50px 100px;
+	width: 500px;
+	height: 210px;
+	box-shadow: 2px 2.2px 2px 2px grey;
+	border-radius: 0.1em;
+	opacity: 0;
+
+}*/
+
 /*.modal {
     width: 100%;
     height: 70px;
