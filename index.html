@@ -65,54 +65,55 @@
 
 <body>
 
-    <h3>FootBall Today</h3>
-    <p>hello and wellcome to football today!!</p>
+    <h3>Sports Today</h3>
+    <p>hello and wellcome to sports today!!</p>
     <hr>
+   <div class = 'field'>
+     <label for='sport'>Fancy Your Sport:</label>
+     <input type='text' name='sport' class='option'>
+     <br>
+     <div class= 'option'>
+     <input type='button' value='Go' id='GoBtn'>
+   </div>
 
     <div class='container'>
-        <div class='add'>
-            <h2>add team:</h2>
+        <div class='selection'>
+            <h2>Select Football League:</h2>
+
             <div class='field'>
-                <label for='teamName'>Team:</label>
-                <input type='text' name='team' class='teamName'>
+                <label for='leagues'>Name Of League:</label>
+                <input type='text' name='' class='leagues'>
             </div>
-            <div class='field'>
-                <label for='position'>Position:</label>
-                <input type='text' name='position' class='position'>
-            </div>
-            <div class='field'>
-                <label for='points'>Points:</label>
-                <input type='text' name='points' class='points'>
-            </div>
+            <br>
+
             <div class='button'>
 
-                <input type='button' value='Add' id='addBtn'>
+                <input type='button' value='Go' id='GoBtn'>
                 <hr>
             </div>
         </div>
     </div>
 
 
-    <p><b>information about the english premier league:</b></p>
     <div class='field'>
-        <h3>English Premier League:</h3>
+        <h3>Wellcome To The Barclays Premier League!:</h3>
+        <h3>Select Your Desired Field:</h3>
+        <ul>
+          <li>
+            <input type='button' value='News' id='newsBtn'>
+          </li>
+          <br>
+          <li>
+            <input type='button' value='Results' id='resultBtn'>
+          </li>
+        </ul>
         <input type='button' value='logs' id='logsBtn'>
-        <hr>
-        <h2>recently updated news</h2>
-         <ul>
-           <li>
-        <input type='button' value='ManChester United' id='newsBtn'>
-      </li>
-    <br>
-         <li>
-        <input type='button' value='Crystal Palace' id='newsBtn2'>
-      </li>
-      </ul>
       </div>
+        <hr>
 
-    <div class="output">
+        <div class="output">
 
-    </div>
+        </div>
 
 
     <script id='some-template' type='text/x-handlebars-template'>
@@ -140,6 +141,7 @@
         </table>
     </script>
     <hr>
+    <h2>Results!!</h2>
 
     <script id='info-Template' type='text/x-handlebars-template'>
         <ul>

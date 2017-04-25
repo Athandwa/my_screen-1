@@ -1,10 +1,11 @@
 var logsButton = document.getElementById('logsBtn');
 var newsButton = document.getElementById('newsBtn');
-var newsButton2 = document.getElementById('newsBtn2');
+var resultsButton = document.getElementById('resultBtn');
+
 var newsResult = document.querySelector('.results');
 var searchResult = document.querySelector('.output');
 
-var addButton = document.getElementById('addBtn');
+var GoButton = document.getElementById('GoBtn');
 
 var teamName = document.querySelector('.teamName');
 var position = document.querySelector('.position');
@@ -24,8 +25,10 @@ var info = [{
     ManChester_United: 'ManUtd relieved after a 2-0 victory againts Burnley which drives them closer to fourth place manCity chase.'
 }, ];
 
-var info2 = [{
-    Crystal_Palace: 'Benteke delivers on double gameweek promise.Palace striker delights 148,000+ new backers with 12 points ahead of his second fixture of Gameweek 34.'
+var barclaysResults = [{
+              score : 'ManUtd vs Burnley(2-0)',
+              score2: 'Crystal_Palace vs Liverpool(2-1)',
+              score3: 'Hull_City vs Watford(2-0)'
 
 }, ];
 
@@ -66,9 +69,9 @@ var data = [{
 
 
 ];
-newsButton2.addEventListener('click', function() {
+resultsButton.addEventListener('click', function() {
     var leagueNews = template({
-        news: info2,
+        results: barclaysResult,
     });
     newsResult.innerHTML = leagueNews;
 });
@@ -76,7 +79,6 @@ newsButton2.addEventListener('click', function() {
 newsButton.addEventListener('click', function() {
     var leagueNews = template({
         news: info,
-        // news: info2,
     });
     newsResult.innerHTML = leagueNews;
     // console.log(newsResult.innerHTML);
@@ -88,31 +90,8 @@ logsButton.addEventListener('click', function() {
     });
     searchResult.innerHTML = leagueTable;
 });
-//
-// function myFunction() {
-//   var table = document.getElementById('myTable');
-//   var row = table.insertRow(0);
-//   var Everton = row.insertEverton(0);
-//   var Arsenal = row.insertArsenal(0);
-//   Everton.innerHTML = 'Everton';
-//   Arsenal.innerHTML = 'Arsenal';
-// }
-//
-// function showData(data) {
-//   var teams = [];
-//   var position = [];
-//   var points = [];
 
-//
-//   for (var i = 0; i < data.length; i++) {
-//     var teamsData = data[i];
-//     teams.push(teamsData.name);
-//     position.push(teamsData.name);
-//     points.push(teamsData.name);
-//   }
-// }
-
-addButton.addEventListener('click', function() {
+GoButton.addEventListener('click', function() {
   // alert('hjbjgv');
 
   var teamValue = teamName.value;
