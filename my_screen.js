@@ -6,11 +6,15 @@ var searchResult = document.querySelector('.output');
 
 var addButton = document.getElementById('addBtn');
 
+var teamName = document.querySelector('.teamName');
+var position = document.querySelector('.position');
+var points = document.querySelector('.points');
+
 var source = document.querySelector('#info-Template').innerHTML;
 var template = Handlebars.compile(source)
 
 var infoSource = document.querySelector('#info-Template2').innerHTML;
-var templat3 = Handlebars.compile(infoSource);
+var template3 = Handlebars.compile(infoSource);
 
 var source2 = document.getElementById('some-template').innerHTML;
 var template2 = Handlebars.compile(source2);
@@ -65,7 +69,6 @@ var data = [{
 newsButton2.addEventListener('click', function() {
     var leagueNews = template({
         news: info2,
-        // news: info2,
     });
     newsResult.innerHTML = leagueNews;
 });
@@ -85,31 +88,41 @@ logsButton.addEventListener('click', function() {
     });
     searchResult.innerHTML = leagueTable;
 });
+//
+// function myFunction() {
+//   var table = document.getElementById('myTable');
+//   var row = table.insertRow(0);
+//   var Everton = row.insertEverton(0);
+//   var Arsenal = row.insertArsenal(0);
+//   Everton.innerHTML = 'Everton';
+//   Arsenal.innerHTML = 'Arsenal';
+// }
+//
+// function showData(data) {
+//   var teams = [];
+//   var position = [];
+//   var points = [];
 
-function showData(data) {
-  var teams = [];
-  var position = [];
-  var points = [];
-
-  for (var i = 0; i < data.length; i++) {
-    var teamData = data[i];
-    teams.push(teamData.name);
-    position.push(teamData.name);
-    points.push(teamData.name);
-  }
-}
+//
+//   for (var i = 0; i < data.length; i++) {
+//     var teamsData = data[i];
+//     teams.push(teamsData.name);
+//     position.push(teamsData.name);
+//     points.push(teamsData.name);
+//   }
+// }
 
 addButton.addEventListener('click', function() {
   // alert('hjbjgv');
-  
-  var teamValue = team.value;
+
+  var teamValue = teamName.value;
   var positionValue = position.value;
   var pointsValue = points.value;
 
   if (teamValue !== ''
        && positionValue !== ''
        && pointsValue !== '') {
-         teams.push({
+         team.push({
            name: teamValue,
            position: positionValue,
            points: pointsValue
@@ -117,6 +130,7 @@ addButton.addEventListener('click', function() {
        }
     showData(teams);
 });
+
 
 
 

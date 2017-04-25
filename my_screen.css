@@ -1,4 +1,6 @@
-body{
+body, html {
+  align-items: center;
+  align-content: center;
   background: skyblue; /* For browsers that do not support gradients */
       background: -webkit-linear-gradient(silver, skyblue, grey); /* For Safari 5.1 to 6.0 */
       background: -o-linear-gradient(silver,skyblue, grey); /* For Opera 11.1 to 12.0 */
@@ -9,6 +11,7 @@ table, th ,td {
   border: 1px dotted black;
 }
 #logsBtn {
+  align-content: center;
     position: center;
     margin: 0px -40px;
     background-color: #4BABBD;
@@ -25,6 +28,7 @@ table, th ,td {
     transition: 300ms ease-in-out;
 }
 #logsBtn:hover {
+
   background-color: #39698B;
   color: #fff000;
   width: 70px;
@@ -69,7 +73,7 @@ table, th ,td {
   background-color: #808080;
 
   }
-  
+
   #newsBtn2 {
       position: absolute;
       margin: 0px -40px;
@@ -95,6 +99,12 @@ table, th ,td {
     -webkit-transition: 150ms ease-in-out;
      -moz-transition: 150ms ease-in-out;
      transition: 150ms ease-in-out;
+  }
+  h3 {
+    text-align: center;
+  }
+  p {
+    text-align:center;
   }
 
 /*.searchResults {
