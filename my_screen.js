@@ -101,6 +101,7 @@ function showData(data) {
 
 addButton.addEventListener('click', function() {
   // alert('hjbjgv');
+  
   var teamValue = team.value;
   var positionValue = position.value;
   var pointsValue = points.value;
