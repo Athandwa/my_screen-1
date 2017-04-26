@@ -15,20 +15,22 @@
     </script>
 
     <script class='info-Template' type='text/Handlebars-x'>
-        {{#each info}}
-        {{ManChester_United}}
-         {{/each}}
+        {{#each info}} {{ManChester United}} {{Chelsea}} {{/each}}
     </script>
     <script class='info-Template2' type='text/Handlebars-x'>
-        {{#each info}}
-        {{Crystal_Palace}}
-         {{/each}}
+        {{#each info2}} {{Cape Town City}} {{Kaizer Chiefs}} {{/each}}
+    </script>
+    <script class='results-template' type='text/Handlebars-x'>
+        {{#each results}} {{score}} {{score2}} {{score3}} {{/each}}
+    </script>
+    <script class='results2-template' type='text/Handlebars-x'>
+        {{#each results2}} {{score}} {{score2}} {{score3}} {{/each}}
     </script>
 
-    <script class='filterTemplate' type='text/Handlebars-x'>
+    <script class='Template' type='text/Handlebars-x'>
         <span class='field'>
     <label for='teamName'>TeamNames</label>
-    <select class='data' class='teamNameFilter'>
+    <select class='data' class='teamName'>
     <option value="">Select</option>
     {{#each TeamNames}}
     <option>{{this}}</option>
@@ -38,7 +40,7 @@
 
         <span class='field'>
     <label for='position'>Position</label>
-    <select class='data' class='positionFilter'>
+    <select class='data' class='position'>
     <option value="">Select</option>
     {{#each position}}
     <option>{{this}}</option>
@@ -49,66 +51,115 @@
 
         <span class='field'>
         <label for='points'>Points</label>
-        <select class='data' class='pointsFilter'>
+        <select class='data' class='points'>
         <option value="">Select</option>
-        {{#each position}}
+        {{#each points}}
         <option>{{this}}</option>
         {{/each}}
         </select>
         </span>
 
     </script>
-    <!-- <input type="button" name="filterButton" value="Filter"> -->
+    <script class='Template' type='text/Handlebars-x'>
+        <span class='field'>
+    <label for='teamName'>TeamNames</label>
+    <select class='data2' class='teamName'>
+    <option value="">Select</option>
+    {{#each TeamNames}}
+    <option>{{this}}</option>
+    {{/each}}
+    </select>
+    </span>
+
+        <span class='field'>
+    <label for='position'>Position</label>
+    <select class='data2' class='position'>
+    <option value="">Select</option>
+    {{#each position}}
+    <option>{{this}}</option>
+    {{/each}}
+    </select>
+    </span>
+
+
+        <span class='field'>
+        <label for='points'>Points</label>
+        <select class='data2' class='points'>
+        <option value="">Select</option>
+        {{#each points}}
+        <option>{{this}}</option>
+        {{/each}}
+        </select>
+        </span>
+
+    </script>
+    <!-- <input type="button" name="filterButton" value=""> -->
 
 </head>
 
 
 <body>
 
+
+
     <h3>Sports Today</h3>
     <p>hello and wellcome to sports today!!</p>
     <hr>
-   <div class = 'field'>
-     <label for='sport'>Fancy Your Sport:</label>
-     <input type='text' name='sport' class='option'>
-     <br>
-     <div class= 'option'>
-     <input type='button' value='Go' id='GoBtn'>
-   </div>
+    <div class='field'>
+        <h4>Select Favourate League:</h4>
 
-    <div class='container'>
-        <div class='selection'>
-            <h2>Select Football League:</h2>
+        <div class='container'>
+            <div class='selection'>
+                <!-- <h2>Select Football League:</h2> -->
 
-            <div class='field'>
-                <label for='leagues'>Name Of League:</label>
-                <input type='text' name='' class='leagues'>
-            </div>
-            <br>
+                <div class='field'>
+                    <label for='leagues'>Name Of League:</label>
+                    <input type='text' name='' class='leagues'>
+                </div>
+                <br>
 
-            <div class='button'>
+                <div class='option'>
+                    <input type='button' value='Go' id='GoBtn'>
+                </div>
 
-                <input type='button' value='Go' id='GoBtn'>
-                <hr>
             </div>
         </div>
-    </div>
+        <hr>
+        <div clas='field'>
+            <h3>Wellcome To The ABSA Premeir League</h3>
+            <h3>Select Your Desired Field:</h3>
+            <ul>
+                <li>
+                    <input type='button' value='News' id='newsBtn2'>
+                </li>
+                <br>
+                <li>
+                    <input type='button' value='Results' id='resultBtn2'>
+                </li>
+                <br>
+                <li>
+                    <input type='button' value='logs' id='logsBtn2'>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <br>
+        <hr>
 
-
-    <div class='field'>
-        <h3>Wellcome To The Barclays Premier League!:</h3>
-        <h3>Select Your Desired Field:</h3>
-        <ul>
-          <li>
-            <input type='button' value='News' id='newsBtn'>
-          </li>
-          <br>
-          <li>
-            <input type='button' value='Results' id='resultBtn'>
-          </li>
-        </ul>
-        <input type='button' value='logs' id='logsBtn'>
-      </div>
+        <div class='field'>
+            <h3>Wellcome To The Barclays Premier League!:</h3>
+            <h3>Select Your Desired Field:</h3>
+            <ul>
+                <li>
+                    <input type='button' value='News' id='newsBtn'>
+                </li>
+                <br>
+                <li>
+                    <input type='button' value='Results' id='resultBtn'>
+                </li>
+            </ul>
+            <input type='button' value='logs' id='logsBtn'>
+        </div>
         <hr>
 
         <div class="output">
@@ -116,328 +167,101 @@
         </div>
 
 
-    <script id='some-template' type='text/x-handlebars-template'>
-        <table id='myTable'>
-            <thead>
-                <th>Team</th>
-                <th>Position</th>
-                <th>Points</th>
-            </thead>
-            <tbody>
-                {{#each teams}}
-                <tr>
-                    <td>
-                        {{teamName}}
-                    </td>
-                    <td>
-                        {{position}}
-                    </td>
-                    <td>
-                        {{points}}
-                    </td>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-    </script>
-    <hr>
-    <h2>Results!!</h2>
-
-    <script id='info-Template' type='text/x-handlebars-template'>
-        <ul>
-            <li>
-                <p>ManChester_United</p>
-              </li>
-        </ul>
-        {{#each news}}
-        {{ManChester_United}}
-        {{/each}}
-    </script>
-    <script id='info-Template2' type='text/x-handlebars-template'>
-<ul>
-  <li>
-    <p>Crystal_Palace</p>
-  </li>
-</ul>
-{{#each news}}
-{{Crystal_Palace}}
-{{/each}}
-</script>
-    <div class='results'>
-
-    </div>
-
-    <!-- <h3>ABSA Premier League</h3>
-  <input type='button' name='' value="Go" class='goButton2'> -->
-    <!-- <div class="container">
-        <div class="add">
-            <h1>search nation&league:</h1>
-            <div class="field">
-                <label for="nation">Nation</label>
-                <input type="text" name="nation" class="nationName">
-            </div>
-            <div class="field">
-                <label for="league">League</label>
-                <input type="text" name="League" class="league">
-            </div>
-
-            <input type="button" name="" value="search" class="addButton">
-        </div>
-
-    </div> -->
-    <!-- <div class="">
-        <h1>Filters</h1>
-
-        <div class="filters">
-
-        </div>
-
-    </div>
-
-    <div class="">
-
-    </div> -->
-    <!-- <div class="">
-        <h1>results</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody class="nationList">
-
-            </tbody>
-        </table>
-    </div>
-    </div> -->
-
-    <!-- <div class="navBar"> -->
-    <!-- <ul> -->
-    <!-- <li> -->
-    <!-- <input type="button" id="modalActive" value="add data here" /> -->
-    <!-- </li> -->
-    <!-- </ul> -->
-    <!-- <div class="modal">
-            <div class="title">
-                <h1>Sport Overview!</h2>
-        <hr>
-        <div class="container">
-          <div class="addingData">
-            <h3 id="HeadingAddNew">Add New Nationality</h3>
-            <table>
-              <tr>
-                <td>Nation :</td>
-                <td><input type="text" name="nationality" id="addedNation"/></td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <h2>Edition:</h2>
-         <select>
-           <option value="international">International</option>
-           <option value="south africa">South Africa</option>
-         </select>
-         <div class="Button">
-           <br>
-           <input type="button" value="GO" id="goBTN">
-           <input type="button" value="Menu" id="menuBTN">
-           <hr>
-         </div>
-         <div class ="navBar1">
-           <h3>FootBall Today</h3>
-
-           <ul>
-
-               <h3>UEFA Champions League</h3>
-               <input type="button" value="Show Fixtures" id='fixtureBTN'/>
-              <!-- below you are referencing yuor Handlebars object key -->
-
-    <!-- <input type="button" name="answer" value="Show Results" onclick="showResults()"/>
-
-                 <div id="results" style="display:none;" class="answer_List">
-                   <ul>
-                  <li>   11 April 2017:
-                   Juventus : 3
-                     Barcelona : 0
-                   </li>
-                 </ul>
-                   </li>
-
-                 </div>
-
-
-               <input type="button" name="answer" value="Show Groups" onclick="showGroups()"/>
-                <div id="groups" style="display:none:" class="answer_List">
-                  <table>
-                    <tr>
+        <script id='logs-template' type='text/x-handlebars-template'>
+            <table id='myTable'>
+                <thead>
                     <th>Team</th>
-                    <th>P</th>
-                    <th>W</th>
-                    <th>Gd</th>
-                    <th>Pts</th>
-                  </tr>
-                  <tr>
-                    <td>Arsenal</td>
-                    <td>6</td>
-                    <td>4</td>
-                    <td>12</td>
-                    <td>14</td>
-                  <tr>
-                  </table>
-             </li>
-             <hr>
-             <li>
-               <h3>English Premier League</h3>
-               <input type="button" id="modalActive" value="Fixtures">
-               |
-               <input type="button" id="modalActive" value="Results">
-               |
-               <input type="button" id="modalActive" value="Table">
-
-            </li>
-            <hr>
-            <li>
-              <h3>ABSA Premiership</h3>
-               <input type="button" id="modalActive" value="Fixtures">
-               |
-               <input type="button" id="modalActive" value="Results">
-               |
-               <input type="button" id="modalActive" value="Table">
-
-           <hr>
-             </li>
-           </ul>
-         </div>
-         <h3>Output:</h3>
-         <div class = "display">
-           <div class = "searchResults">
-             <ul class="ul">
-              <script src="my_screen.js" type="text/x-handlebars-some-template" id="outputItems">
-              <li>Fixtures{{fixtures}}</li>
-              <li>Results{{results}}</li>
-              <li>Table{{table}}</li>
-            </script>
-          </ul>
-        </div>
-      </div> -->
-
-
-    <!-- <h3></h3>
-    <div id = "searchBox">
-      <div class = "searchForm">
-      <table id = "#search">
-        <tr>
-          <td>
-            <label>Diet</label>
-          </td>
-          <td>
-            <select id = "chooseDietProcess">
-              <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "dietList">
-                <option name ="diet">{{diet}}</option>
-             </script>
-           </select>
-         </td>
-       </tr>
-       <tr>
-         <td>
-           <label>Exercise</label>
-         </td>
-         <td>
-           <select id = "chooseExerciseProcess">
-             <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "exerciseList">
-              <option name ="exercise">{{exercise}}</option>
-            </script>
-          </select>
-        </td>
-      </tr>
-
-      <tr>
-        <td>
-          <label>Eating Healthy</label>
-        </td>
-        <td>
-          <select id = "chooseHealthyFood">
-            <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "eatHealthyList">
-              <option name="Eating Healthy">{{Eating Healthy}}</option>
-            </script>
-          </select>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label>Serials</label>
-        </td>
-        <td>
-          <select id = "ChooseProperSerials">
-            <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "serials">
-              <option name ="Serials">{{serials}}</option>
-            </script>
-          </select>
-        </td>
-        </tr>
-      </table>
-      <div class = "button">
-        <input type = "button" value = "search" id = "searchBTN"/>
-      </div>
-    </div>
-  </div>
-  <h3>Results</h3>
-  <div class = "display">
-    <div class = "searchResults">
-      <ul class = "ul">
-        <script src = "my_screen.js" type = "text/x-handlebars-some-template" id = "outputItems">
-          <li>Diet Process{{diet}}</li>
-          <li>Exercise Process{{exercise}}</li>
-          <li>Eating Healthy Process{{eating healthy}}</li>
-          <li>Serials{{Proper Serials}}</li>
+                    <th>Position</th>
+                    <th>Points</th>
+                </thead>
+                <tbody>
+                    {{#each teams}}
+                    <tr>
+                        <td>
+                            {{teamName}}
+                        </td>
+                        <td>
+                            {{position}}
+                        </td>
+                        <td>
+                            {{points}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </script>
-      </ul>
-    </div>
-  </div>
+        <hr>
+        <script id='logs2-template' type='text/x-handlebars-template'>
+            <table id='myTable'>
+                <thead>
+                    <th>Team</th>
+                    <th>Position</th>
+                    <th>Points</th>
+                </thead>
+                <tbody>
+                    {{#each teams}}
+                    <tr>
+                        <td>
+                            {{teamName}}
+                        </td>
+                        <td>
+                            {{position}}
+                        </td>
+                        <td>
+                            {{points}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </script>
 
-  <div class = "box2">
-    <div class = "addingData">
-      <h3 id = "addNewData">Add New Fittness Process</h3>
-      <table>
-        <tr>
-          <td>Diet</td>
-          <td><input type = "text" name = "diet" process = "dietFoodProcess" id = "addedDiet" /></td>
-        </tr>
-        <tr>
-          <td>Exercise</td>
-          <td>
-            <input type = "text" name = "exercise" process = "exerciseProcess" id = "addedExercise" />
-          </td>
-        </tr>
+        <h2>FeedBack!!</h2>
 
-        <tr>
-          <td>Eating healthy</td>
-          <td>
-            <input type = "text" name = "eating healthy" process = "eatingHealthyProcess" id = "addedHealthyEating"/>
-          </td>
-        </tr>
-        <tr>
-          <td>Serials</td>
-          <td>
-            <input type = "text" name = "serials" process = "serialsProcess" id = "addedSerials"/>
-          </td>
-        </tr>
+        <script id='info-template' type='text/x-handlebars-template'>
+            <ul>
+                {{#each news}}
+                <li><b>{{team}}</b> : {{news}}
+                </li>
+                <hr> {{/each}}
+            </ul>
+        </script>
 
-        <select>
-          <option name = "addedDiet" value = "dietProducts">dietProducts</option>
-          <option name = "addedExercise" value = "exerciseProcesses">exerciseProcesses</option>
-          <option name = "addedHealthyEating" value = "eatingHealthyProcess">eatingHealthyProcess</option>
-        </select>
-<hr>
-      <!-- <h5 class = "close">X</h5> -->
-    <!-- <input type = "button" id = "successBTN" value = "Fantastic!!"/> -->
-    <!-- </div> -->
-    <!-- </div> -->
+        <script id='info-template2' type='text/x-handlebars-template'>
+            <ul>
+                {{#each news}}
+                <li><b>{{team}}</b> : {{news}}
+                </li>
+                <hr> {{/each}}
+            </ul>
+        </script>
 
-    <script src="handlebars-v4.0.5.js" charset="utf-8"></script>
-    <script src="my_screen.js" charset="utf-8"></script>
+        <script id='results-template' type='text/x-handlebars-template'>
+            <ul>
+                {{#each results}}
+                <li>
+                    {{score}} {{score2}} {{score3}}
+                </li>
+                <hr> {{/each}}
+            </ul>
+        </script>
+        <script id='results2-template' type='text/x-handlebars-template'>
+            <ul>
+                {{#each results}}
+                <li>
+                    {{score}} {{score2}} {{score3}}
+                </li>
+                <hr> {{/each}}
+            </ul>
+        </script>
+        <div class='feedback'>
+
+        </div>
+
+
+        <script src="handlebars-v4.0.5.js" charset="utf-8"></script>
+        <script src="my_screen.js" charset="utf-8"></script>
 </body>
 
 </html>

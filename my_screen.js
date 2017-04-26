@@ -2,40 +2,89 @@ var logsButton = document.getElementById('logsBtn');
 var newsButton = document.getElementById('newsBtn');
 var resultsButton = document.getElementById('resultBtn');
 
-var newsResult = document.querySelector('.results');
-var searchResult = document.querySelector('.output');
+var logsButton2 = document.getElementById('logsBtn2');
+var newsButton2 = document.getElementById('newsBtn2');
+var resultsButton2 = document.getElementById('resultBtn2');
+
+//feedback div
+var scoreResult = document.querySelector('.feedback');
+var scoreResult2 = document.querySelector('.feedback');
+
+var newsResult = document.querySelector('.feedback');
+var newsResult2 = document.querySelector('.feedback');
+
+//output div
+var logsResult = document.querySelector('.output');
+var logsResult2 = document.querySelector('.output');
+
 
 var GoButton = document.getElementById('GoBtn');
 
-var teamName = document.querySelector('.teamName');
-var position = document.querySelector('.position');
-var points = document.querySelector('.points');
+// var teamName = document.querySelector('.teamName');
+// var position = document.querySelector('.position');
+// var points = document.querySelector('.points');
 
-var source = document.querySelector('#info-Template').innerHTML;
-var template = Handlebars.compile(source)
+var source = document.querySelector('#info-template').innerHTML;
+var infoTemplate = Handlebars.compile(source)
+var source6 = document.querySelector('#info-template2').innerHTML;
+var infoTemplate2 = Handlebars.compile(source6)
 
-var infoSource = document.querySelector('#info-Template2').innerHTML;
-var template3 = Handlebars.compile(infoSource);
-
-var source2 = document.getElementById('some-template').innerHTML;
+var source2 = document.getElementById('logs-template').innerHTML;
 var template2 = Handlebars.compile(source2);
+
+var source3 = document.querySelector('#logs2-template').innerHTML;
+var template3 = Handlebars.compile(source3);
+
+var source4 = document.querySelector('#results-template').innerHTML;
+var resultsTemplate = Handlebars.compile(source4);
+var source5 = document.querySelector('#results2-template').innerHTML;
+var resultsTemplate2 = Handlebars.compile(source5);
+
 
 
 var info = [{
-    ManChester_United: 'ManUtd relieved after a 2-0 victory againts Burnley which drives them closer to fourth place manCity chase.'
-}, ];
+        team: 'ManChester United',
+        news: 'ManUtd relieved after a 2-0 victory againts Burnley which drives them closer to fourth place manCity chase.'
+    },
+    {
+        team: 'Chelsea',
+        news: 'title chasers Chelsea reassure premier league champs.'
+    }
+];
 
-var barclaysResults = [{
-              score : 'ManUtd vs Burnley(2-0)',
-              score2: 'Crystal_Palace vs Liverpool(2-1)',
-              score3: 'Hull_City vs Watford(2-0)'
+var info2 = [{
+         team: 'Cape Town City',
+         news: 'Kaizer Chiefs stunned by first place CapeTown City who smacked a wopping 2-0 victory which assure them to likely be champs for the first time ever!.'
+       },
+       {
+         team: 'Kaizer Chiefs',
+         news: 'Chiefs look to bolster their attack by eyeing former Sunderland key player (Steven Pienaar) in the up-coming transfer window'
+       }
+];
 
-}, ];
+var results2 = [{
+        score: 'Cape Town City vs kaizer Chiefs (2-0)',
+    },
+    {
+        score2: 'Sundowns vs SuperSport Utd (3-2)',
+    },
+    {
+        score3: 'Olando Pirates vs Golden Arrows (2-2)'
+    }
 
+];
 
-// {
-//  Liverpool: '.'
-// }
+var results = [{
+        score: 'ManUtd vs Burnley(2-0)',
+    },
+    {
+        score2: 'Crystal_Palace vs Liverpool(2-1)',
+    },
+    {
+        score3: 'Hull_City vs Watford(2-0)'
+    }
+];
+
 var data = [{
         teamName: 'Chelsea',
         position: 1,
@@ -69,197 +118,101 @@ var data = [{
 
 
 ];
-resultsButton.addEventListener('click', function() {
-    var leagueNews = template({
-        results: barclaysResult,
+
+var data2 = [{
+        teamName: 'Cape Town City',
+        position: 1,
+        points: 75
+    },
+    {
+        teamName: 'Olando Pirates',
+        position: 2,
+        points: 71
+    },
+    {
+        teamName: 'Kaizer Chiefs',
+        position: 3,
+        points: 66
+    },
+    {
+        teamName: 'Supersport United',
+        position: 4,
+        points: 64
+    },
+    {
+        teamName: 'Moroka Swallows',
+        position: 5,
+        points: 60
+    },
+    {
+        teamName: 'Mamelodi Sundowns',
+        position: 6,
+        points: 57
+    },
+
+    {
+        teamName: 'Maritzburg United',
+        position: 7,
+        points: 49
+    },
+
+    {
+        teamName: 'Golden Arrows',
+        position: 8,
+        points: 45
+    },
+
+    {
+        teamName: 'Ajax Cape Town',
+        position: 9,
+        points: 43
+    },
+
+    {
+        teamName: 'Free State Stars',
+        position: 10,
+        points: 40
+    },
+
+];
+resultsButton2.addEventListener('click', function() {
+    var leagueResults = resultsTemplate2({
+        results: results2,
     });
-    newsResult.innerHTML = leagueNews;
+    scoreResult2.innerHTML = leagueResults;
+
+});
+resultsButton.addEventListener('click', function() {
+    var leagueResults = resultsTemplate({
+        results: results,
+    });
+    scoreResult.innerHTML = leagueResults;
 });
 
 newsButton.addEventListener('click', function() {
-    var leagueNews = template({
+    var leagueNews = infoTemplate({
         news: info,
+        // news: info2,
     });
     newsResult.innerHTML = leagueNews;
     // console.log(newsResult.innerHTML);
+});
+newsButton2.addEventListener('click', function() {
+  var leagueNews = infoTemplate2({
+    news: info2,
+  });
+  newsResult2.innerHTML = leagueNews;
 });
 
 logsButton.addEventListener('click', function() {
     var leagueTable = template2({
         teams: data,
     });
-    searchResult.innerHTML = leagueTable;
+    logsResult.innerHTML = leagueTable;
 });
-
-GoButton.addEventListener('click', function() {
-  // alert('hjbjgv');
-
-  var teamValue = teamName.value;
-  var positionValue = position.value;
-  var pointsValue = points.value;
-
-  if (teamValue !== ''
-       && positionValue !== ''
-       && pointsValue !== '') {
-         team.push({
-           name: teamValue,
-           position: positionValue,
-           points: pointsValue
-         });
-       }
-    showData(teams);
+logsButton2.addEventListener('click', function() {
+    var leagueTable2 = template3({
+        teams: data2,
+    });
+    logsResult2.innerHTML = leagueTable2;
 });
-
-
-
-
-
-
-// you wanna target your empty div in order to write your result
-//
-// var addedNationality = document.getElementById('addedNation');
-// var modal = document.querySelector('.container');
-// var addButton = document.getElementById('addBTN');
-// var selectedNation = document.getElementById('selectedNation');
-// var showModalBTN = document.getElementById('modalActive');
-// var closeModal = document.getElementById('.close');
-//
-// var modal = document.querySelector('.container');
-//
-// showModalBTN.addEventListener('click', function(){
-//   modal.classList.remove('inactiveModal');
-//   form.classList.remove('inactiveForm');
-//   form.classList.add('formActive');
-//   modal.classList.add('activeModal');
-//
-// });
-// closeModal.addEventListener('click', function() {
-//     hideModal();
-//     form.classList.add('inactiveForm');
-//     form.classList.remove('formActive');
-//     clearInput();
-// });
-// hideModal() {
-//   modal.
-// }
-//
-
-
-// (function(){
-//   'use strict';
-//
-//   function initTemplate(templateSelector){
-//     var templateText = document.querySelector(templateSelector).innerHTML;
-//     return Handlebars.compile(templateText);
-//   }
-//   var filterTemplate = initTemplate('filterTemplate');
-//   var filters = document.querySelector('.filters');
-//
-//   var nationsTemplate = initTemplate('.nationsTemplate');
-//   var nationsElement = document.querySelector('.nationList');
-//
-//   var searchButton = document.querySelector('.searchButton');
-//   var filterButton = document.querySelector('.filterButton');
-//
-//   var nationName = document.querySelector('.nationName');
-//   var league = document.querySelector('.league');
-//
-//   var nations = [{
-//       name : 'South_Africa',
-//       league: 'ABSA_Premeir_League'
-//   }];
-//   function showData(data) {
-//     var nations = [];
-//     var leagues = [];
-//
-//     for (var i = 0; i < data.length; i++) {
-//       var NationData = data[i];
-//       nations.push(nationData.name);
-//       leagues.push(nationData.league);
-//         }
-//         filters.innerHTML = filterTemplate({
-//           nations:nations.sort(),
-//           leagues:leagues.sort(),
-//         });
-//         nationsElement.innerHTML = nationsTemplate({
-//           nations: data
-//         });
-//
-//   }
-//   }
-//
-//   searchButton.addEventListener('click', function() {
-//     var nationValue = nationValue.value;
-//     var leagueValue = league.value;
-//
-//     if(nationValue !== '' && leagueValue !== '') {
-//       nations.push({
-//         name: nationValue,
-//         league: leagueValue
-//       });
-//       showData(nations);
-//     }
-//     showData(nations)
-//   });
-//
-//   // var EUFA_ChampionsLeague_Ranks = [{
-// //                       team: "Arsenal",
-// //                       gamesPlayed: 6,
-// //                       gamesWon : 4,
-// //                       goalDifference: 12,
-// //                       points: 14
-// //                     }
-// //                   ]
-
-// var EUFA_ChampionsLeague_Results = [{
-//             team : "Juventus vs Barcelona",
-//             date : "11 April 2017",
-//             time : "20:45",
-//             venue :"Old Trafford",
-//             score : [{Juventus:3} , {Barcelona: 0}]
-//           }
-//         ]
-//         var EUFA_ChampionsLeague_upComing = [{
-//                 team: "Borussia dotmund vs Monaco",
-//                 date: "12 April 2017",
-//                 time: "18:45",
-//                 venue: "Signal-Iduna-Park",
-//                 score: "?"
-//             },
-//             {
-//                 team: "Bayern Munchen vs Real Madrid",
-//                 date: "12 April 2107",
-//                 time: "20:45",
-//                 venue: "Allianz-Arena",
-//                 score: "?"
-//             },
-//             {
-//                 team: "Atletica Madrid vs Leicester City",
-//                 date: "12 April 2017",
-//                 time: "20:45",
-//                 venue: "King Power Staduim",
-//                 score: "?"
-//             }
-//
-//         ];
-//
-//         //add new field:
-//       //   addButton.addEventListener('click', function(){
-//       //     var addedNation = 0;
-//       //
-//       //     for(var i = 0; i < addedNation.length; i++) {
-//       //       if (addedNation[i]).slected === true) {
-//       //         addedNationSelect = addedNation[i].value;
-//       //       } else {
-//       //         return false;
-//       //     }
-//       //   }
-//       // }
-// // call the variable called template and give it an object key that you referenced within your html file and pair your key with your list of objects or array
-// function showFixtures(){
-// console.log(EUFA_ChampionsLeague_upComing);
-//
-//  fixturesAsSource =  template({
-//   EUFA_ChampionsLeague_upComing: EUFA_ChampionsLeague_upComing, fixturesDisplay:"block"
-// });
-// }
