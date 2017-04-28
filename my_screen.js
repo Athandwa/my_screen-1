@@ -125,7 +125,6 @@ var data = [{
 
 
 ];
-
 var data2 = [{
         teamName: 'Cape Town City',
         position: 1,
