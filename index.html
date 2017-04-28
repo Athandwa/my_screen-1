@@ -21,7 +21,7 @@
         {{#each info2}} {{Cape Town City}} {{Kaizer Chiefs}} {{/each}}
     </script>
     <script class='results-template' type='text/Handlebars-x'>
-        {{#each results}} {{score}} {{score2}} {{score3}} {{/each}}
+        {{#each results}} {{match1}} {{match2}} {{match3}} {{match4}} {{match5}} {{/each}}
     </script>
     <script class='results2-template' type='text/Handlebars-x'>
         {{#each results2}} {{score}} {{score2}} {{score3}} {{/each}}
@@ -96,10 +96,10 @@
     <!-- <input type="button" name="filterButton" value=""> -->
 
 </head>
-
-
 <body>
 
+ <div class='container2 activeModal'>
+   <div class='displayingField formActive'>
 
 
     <h3>Sports Today</h3>
@@ -109,10 +109,9 @@
         <h4>Select Favourate League:</h4>
 
         <div class='container'>
-            <div class='selection'>
                 <!-- <h2>Select Football League:</h2> -->
 
-                <div class='field'>
+                <div class='field2'>
                     <label for='leagues'>Name Of League:</label>
                     <input type='text' name='' class='leagues'>
                 </div>
@@ -125,40 +124,37 @@
             </div>
         </div>
         <hr>
-        <div clas='field'>
+        <div class='field3'>
             <h3>Wellcome To The ABSA Premeir League</h3>
             <h3>Select Your Desired Field:</h3>
-            <ul>
-                <li>
+            <!-- <ul> -->
+                <!-- <li> -->
                     <input type='button' value='News' id='newsBtn2'>
-                </li>
+                <!-- </li> -->
                 <br>
-                <li>
+                <br>
                     <input type='button' value='Results' id='resultBtn2'>
-                </li>
-                <br>
-                <li>
+                    <br>
+                    <br>
                     <input type='button' value='logs' id='logsBtn2'>
-                </li>
-            </ul>
-        </div>
+                  </div>
+
         <br>
         <br>
         <hr>
 
-        <div class='field'>
+        <div class='field4'>
             <h3>Wellcome To The Barclays Premier League!:</h3>
             <h3>Select Your Desired Field:</h3>
-            <ul>
-                <li>
                     <input type='button' value='News' id='newsBtn'>
-                </li>
-                <br>
-                <li>
+                  <br>
+                  <br>
                     <input type='button' value='Results' id='resultBtn'>
-                </li>
-            </ul>
+                <br>
+                <br>
             <input type='button' value='logs' id='logsBtn'>
+          <br>
+
         </div>
         <hr>
 
@@ -217,7 +213,7 @@
             </table>
         </script>
 
-        <h2>FeedBack!!</h2>
+        <h2>Results!</h2>
 
         <script id='info-template' type='text/x-handlebars-template'>
             <ul>
@@ -241,7 +237,7 @@
             <ul>
                 {{#each results}}
                 <li>
-                    {{score}} {{score2}} {{score3}}
+                    {{match1}} {{match2}} {{match3}} {{match4}} {{match5}}
                 </li>
                 <hr> {{/each}}
             </ul>

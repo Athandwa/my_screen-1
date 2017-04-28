@@ -74,14 +74,21 @@ var results2 = [{
 
 ];
 
-var results = [{
-        score: 'ManUtd vs Burnley(2-0)',
+var last5matches = [{
+        match1: 'ManUtd vs Burnley(2-0)',
+
     },
     {
-        score2: 'Crystal_Palace vs Liverpool(2-1)',
+        match2: 'ManUtd vs Chelsea(2-0)',
     },
     {
-        score3: 'Hull_City vs Watford(2-0)'
+        match3: 'ManUtd vs Liverpool(1-1)',
+    },
+    {
+        match4: 'ManUtd vs Bournemouth(1-1)',
+    },
+    {
+        match5: 'ManUtd vs manCity(0-0)'
     }
 ];
 
@@ -184,7 +191,7 @@ resultsButton2.addEventListener('click', function() {
 });
 resultsButton.addEventListener('click', function() {
     var leagueResults = resultsTemplate({
-        results: results,
+        results: last5matches,
     });
     scoreResult.innerHTML = leagueResults;
 });
@@ -216,3 +223,23 @@ logsButton2.addEventListener('click', function() {
     });
     logsResult2.innerHTML = leagueTable2;
 });
+
+
+// var showModalBTN = document.getElementById('modalActive');
+// var modal = document.querySelector('.container2');
+// var closeModal = document.querySelector('.close');
+// var form = document.querySelector('.addingData');
+// // show modal
+// showModalBTN.addEventListener('click', function(){
+//   modal.classList.remove('inactiveModal');
+//   form.classList.remove('inactiveForm');
+//   form.classList.remove('formActive');
+//   modal.classList.remove('activeModal');
+// });
+//
+// closeModal.addEventListener('click', function() {
+//     hideModal();
+//     form.classList.add('inactiveForm');
+//     form.classList.remove('formActive');
+//     clearInput();
+// });
