@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
@@ -96,169 +96,173 @@
     <!-- <input type="button" name="filterButton" value=""> -->
 
 </head>
+
 <body>
+  <p id='league'></p>
 
- <div class='container2 activeModal'>
-   <div class='displayingField formActive'>
+    <div class='container2 activeModal'>
+        <div class='displayingField formActive'>
 
 
-    <h3>Sports Today</h3>
-    <p>hello and wellcome to sports today!!</p>
-    <hr>
-    <div class='field'>
-        <h4>Select Favourate League:</h4>
+            <h3>Sports Today</h3>
+            <p>hello and wellcome to sports today!!</p>
+            <hr>
+            <div class='field'>
+                <h4>Select Favourate League:</h4>
 
-        <div class='container'>
-                <!-- <h2>Select Football League:</h2> -->
+                <div class='container'>
+                    <!-- <h2>Select Football League:</h2> -->
 
-                <div class='field2'>
-                    <label for='leagues'>Name Of League:</label>
-                    <input type='text' name='' class='leagues'>
+                    <div class='radios'>
+                        <input type="radio" name='league' class="theLeague" value="ABSA PREMIER LEAGUE"> ABSA PREMIER LEAGUE
+                        <input type="radio" name='league' class="theLeague" value="BARCLAYS PREMIER LEAGUE"> BARCLAYS PREMIER LEAGUE
+
+                    </div>
+                    <br>
+
+                    <div class='option'>
+                        <input type='button' value='Go' id='GoBtn'>
+                    </div>
+
                 </div>
-                <br>
-
-                <div class='option'>
-                    <input type='button' value='Go' id='GoBtn'>
-                </div>
-
             </div>
-        </div>
-        <hr>
-        <div class='field3'>
-            <h3>Wellcome To The ABSA Premeir League</h3>
-            <h3>Select Your Desired Field:</h3>
-            <!-- <ul> -->
+
+            <div class='ABSA_PREMIER_LEAGUE hide'>
+                <h3>Wellcome To The ABSA Premier League</h3>
+                <h3>Select Your Desired Field:</h3>
+                <!-- <ul> -->
                 <!-- <li> -->
-                    <input type='button' value='News' id='newsBtn2'>
+                <input type='button' value='News' id='newsBtn2'>
                 <!-- </li> -->
                 <br>
                 <br>
-                    <input type='button' value='Results' id='resultBtn2'>
-                    <br>
-                    <br>
-                    <input type='button' value='logs' id='logsBtn2'>
-                  </div>
-
-        <br>
-        <br>
-        <hr>
-
-
-        <div class='field4'>
-            <h3>Wellcome To The Barclays Premier League!:</h3>
-            <h3>Select Your Desired Field:</h3>
-                    <input type='button' value='News' id='newsBtn'>
-                  <br>
-                  <br>
-                    <input type='button' value='Results' id='resultBtn'>
+                <input type='button' value='Results' id='resultBtn2'>
                 <br>
                 <br>
-            <input type='button' value='logs' id='logsBtn'>
-          <br>
+                <input type='button' value='logs' id='logsBtn2'>
+            </div>
 
-        </div>
-        <hr>
-
-        <div class="output">
-
-        </div>
+            <br>
+            <br>
 
 
-        <script id='logs-template' type='text/x-handlebars-template'>
-            <table id='myTable'>
-                <thead>
-                    <th>Team</th>
-                    <th>Position</th>
-                    <th>Points</th>
-                </thead>
-                <tbody>
-                    {{#each teams}}
-                    <tr>
-                        <td>
-                            {{teamName}}
-                        </td>
-                        <td>
-                            {{position}}
-                        </td>
-                        <td>
-                            {{points}}
-                        </td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </script>
-        <hr>
-        <script id='logs2-template' type='text/x-handlebars-template'>
-            <table id='myTable'>
-                <thead>
-                    <th>Team</th>
-                    <th>Position</th>
-                    <th>Points</th>
-                </thead>
-                <tbody>
-                    {{#each teams}}
-                    <tr>
-                        <td>
-                            {{teamName}}
-                        </td>
-                        <td>
-                            {{position}}
-                        </td>
-                        <td>
-                            {{points}}
-                        </td>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
-        </script>
+            <div class='BARCLAYS_PREMIER_LEAGUE hide'>
+                <h3>Wellcome To The Barclays Premier League!:</h3>
+                <h3>Select Your Desired Field:</h3>
+                <input type='button' value='News' id='newsBtn'>
+                <br>
+                <br>
+                <input type='button' value='Results' id='resultBtn'>
+                <br>
+                <br>
+                <input type='button' value='logs' id='logsBtn'>
+                <br>
 
-        <h2>Results!</h2>
+                <br>
+                <br>
+                <br>
+            </div>
 
-        <script id='info-template' type='text/x-handlebars-template'>
-            <ul>
-                {{#each news}}
-                <li><b>{{team}}</b> : {{news}}
-                </li>
-                <hr> {{/each}}
-            </ul>
-        </script>
+            <div class="output">
 
-        <script id='info-template2' type='text/x-handlebars-template'>
-            <ul>
-                {{#each news}}
-                <li><b>{{team}}</b> : {{news}}
-                </li>
-                <hr> {{/each}}
-            </ul>
-        </script>
-
-        <script id='results-template' type='text/x-handlebars-template'>
-            <ul>
-                {{#each results}}
-                <li>
-                    {{match1}} {{match2}} {{match3}} {{match4}} {{match5}}
-                </li>
-                <hr> {{/each}}
-            </ul>
-        </script>
-        <script id='results2-template' type='text/x-handlebars-template'>
-            <ul>
-                {{#each results}}
-                <li>
-                    {{score}} {{score2}} {{score3}}
-                </li>
-                <hr> {{/each}}
-            </ul>
-        </script>
-        <div class='feedback'>
-
-        </div>
+            </div>
 
 
-        <script src="handlebars-v4.0.5.js" charset="utf-8"></script>
-        <script src="my_screen.js" charset="utf-8"></script>
+            <script id='logs-template' type='text/x-handlebars-template'>
+                <table id='myTable'>
+                    <thead>
+                        <th>Team</th>
+                        <th>Position</th>
+                        <th>Points</th>
+                    </thead>
+                    <tbody>
+                        {{#each teams}}
+                        <tr>
+                            <td>
+                                {{teamName}}
+                            </td>
+                            <td>
+                                {{position}}
+                            </td>
+                            <td>
+                                {{points}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </script>
+            <hr>
+            <script id='logs2-template' type='text/x-handlebars-template'>
+                <table id='myTable'>
+                    <thead>
+                        <th>Team</th>
+                        <th>Position</th>
+                        <th>Points</th>
+                    </thead>
+                    <tbody>
+                        {{#each teams}}
+                        <tr>
+                            <td>
+                                {{teamName}}
+                            </td>
+                            <td>
+                                {{position}}
+                            </td>
+                            <td>
+                                {{points}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </script>
+
+            <h2>feedback!</h2>
+
+            <script id='info-template' type='text/x-handlebars-template'>
+                <ul>
+                    {{#each news}}
+                    <li><b>{{team}}</b> : {{news}}
+                    </li>
+                    <hr> {{/each}}
+                </ul>
+            </script>
+
+            <script id='info-template2' type='text/x-handlebars-template'>
+                <ul>
+                    {{#each news}}
+                    <li><b>{{team}}</b> : {{news}}
+                    </li>
+                    <hr> {{/each}}
+                </ul>
+            </script>
+
+            <script id='results-template' type='text/x-handlebars-template'>
+                <ul>
+                    {{#each results}}
+                    <li>
+                        {{match1}} {{match2}} {{match3}} {{match4}} {{match5}}
+                    </li>
+                    <hr> {{/each}}
+                </ul>
+            </script>
+            <script id='results2-template' type='text/x-handlebars-template'>
+                <ul>
+                    {{#each results}}
+                    <li>
+                        {{score}} {{score2}} {{score3}}
+                    </li>
+                    <hr> {{/each}}
+                </ul>
+            </script>
+            <div class='results'>
+
+            </div>
+
+
+            <script src="handlebars-v4.0.5.js" charset="utf-8"></script>
+            <script src="my_screen.js" charset="utf-8"></script>
 </body>
 
 </html>

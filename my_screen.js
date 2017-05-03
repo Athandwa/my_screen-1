@@ -1,3 +1,8 @@
+var GoButton = document.getElementById('GoBtn');
+var radios = document.getElementById('league');
+
+var theLeague = document.querySelector('.theLeague');
+
 var logsButton = document.getElementById('logsBtn');
 var newsButton = document.getElementById('newsBtn');
 var resultsButton = document.getElementById('resultBtn');
@@ -7,27 +12,18 @@ var newsButton2 = document.getElementById('newsBtn2');
 var resultsButton2 = document.getElementById('resultBtn2');
 
 //feedback div
-var scoreResult = document.querySelector('.feedback');
-var scoreResult2 = document.querySelector('.feedback');
+var scoreResult = document.querySelector('.results');
+var scoreResult2 = document.querySelector('.results');
 
-var newsResult = document.querySelector('.feedback');
-var newsResult2 = document.querySelector('.feedback');
+var newsResult = document.querySelector('.results');
+var newsResult2 = document.querySelector('.results');
 
 //output div
 var logsResult = document.querySelector('.output');
 var logsResult2 = document.querySelector('.output');
 
-
-var GoButton = document.getElementById('GoBtn');
-
-// var teamName = document.querySelector('.teamName');
-// var position = document.querySelector('.position');
-// var points = document.querySelector('.points');
-
 var source = document.querySelector('#info-template').innerHTML;
 var infoTemplate = Handlebars.compile(source)
-var source6 = document.querySelector('#info-template2').innerHTML;
-var infoTemplate2 = Handlebars.compile(source6)
 
 var source2 = document.getElementById('logs-template').innerHTML;
 var template2 = Handlebars.compile(source2);
@@ -37,10 +33,12 @@ var template3 = Handlebars.compile(source3);
 
 var source4 = document.querySelector('#results-template').innerHTML;
 var resultsTemplate = Handlebars.compile(source4);
+
 var source5 = document.querySelector('#results2-template').innerHTML;
 var resultsTemplate2 = Handlebars.compile(source5);
 
-
+var source6 = document.querySelector('#info-template2').innerHTML;
+var infoTemplate2 = Handlebars.compile(source6)
 
 var info = [{
         team: 'ManChester United',
@@ -53,13 +51,13 @@ var info = [{
 ];
 
 var info2 = [{
-         team: 'Cape Town City',
-         news: 'Kaizer Chiefs stunned by first place CapeTown City who smacked a wopping 2-0 victory which assure them to likely be champs for the first time ever!.'
-       },
-       {
-         team: 'Kaizer Chiefs',
-         news: 'Chiefs look to bolster their attack by eyeing former Sunderland key player (Steven Pienaar) in the up-coming transfer window'
-       }
+        team: 'Cape Town City',
+        news: 'Kaizer Chiefs stunned by first place CapeTown City who smacked a wopping 2-0 victory which assure them to likely be champs for the first time ever!.'
+    },
+    {
+        team: 'Kaizer Chiefs',
+        news: 'Chiefs look to bolster their attack by eyeing former Sunderland key player (Steven Pienaar) in the up-coming transfer window'
+    }
 ];
 
 var results2 = [{
@@ -125,6 +123,7 @@ var data = [{
 
 
 ];
+
 var data2 = [{
         teamName: 'Cape Town City',
         position: 1,
@@ -181,6 +180,37 @@ var data2 = [{
     },
 
 ];
+
+GoButton.addEventListener('click', function() {
+    var league = document.querySelector(".theLeague:checked").value;
+    console.log(league);
+    var show = document.querySelector('.hide');
+
+   var league;
+    switch (league) {
+        case theLeague:
+            league = "ABSA_PREMIER_LEAGUE";
+            break;
+        case theLeague:
+            league = "BARCLAYS_PREMIER_LEAGUE";
+    }
+
+
+     if(theLeague === 'ABSA_PREMIER_LEAGUE'){
+        return theLeague;
+
+       }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
+        return theLeague;
+     };
+
+    show.classList.add('show');
+    show.classList.remove('hide');
+    console.log(show);
+
+    // }else if(theLeague === 'BARCLAYS_PREMIER_LEAGUE'){
+    // return theLeague;
+});
+
 resultsButton2.addEventListener('click', function() {
     var leagueResults = resultsTemplate2({
         results: results2,
@@ -204,10 +234,10 @@ newsButton.addEventListener('click', function() {
     // console.log(newsResult.innerHTML);
 });
 newsButton2.addEventListener('click', function() {
-  var leagueNews = infoTemplate2({
-    news: info2,
-  });
-  newsResult2.innerHTML = leagueNews;
+    var leagueNews = infoTemplate2({
+        news: info2,
+    });
+    newsResult2.innerHTML = leagueNews;
 });
 
 logsButton.addEventListener('click', function() {
@@ -222,23 +252,3 @@ logsButton2.addEventListener('click', function() {
     });
     logsResult2.innerHTML = leagueTable2;
 });
-
-
-// var showModalBTN = document.getElementById('modalActive');
-// var modal = document.querySelector('.container2');
-// var closeModal = document.querySelector('.close');
-// var form = document.querySelector('.addingData');
-// // show modal
-// showModalBTN.addEventListener('click', function(){
-//   modal.classList.remove('inactiveModal');
-//   form.classList.remove('inactiveForm');
-//   form.classList.remove('formActive');
-//   modal.classList.remove('activeModal');
-// });
-//
-// closeModal.addEventListener('click', function() {
-//     hideModal();
-//     form.classList.add('inactiveForm');
-//     form.classList.remove('formActive');
-//     clearInput();
-// });
