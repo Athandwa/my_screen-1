@@ -10,7 +10,7 @@ var resultsButton = document.getElementById('resultBtn');
 var logsButton2 = document.getElementById('logsBtn2');
 var newsButton2 = document.getElementById('newsBtn2');
 var resultsButton2 = document.getElementById('resultBtn2');
-<<<<<<< HEAD
+
 
 //feedback div
 var scoreResult = document.querySelector('.results');
@@ -19,7 +19,6 @@ var scoreResult2 = document.querySelector('.results');
 var newsResult = document.querySelector('.results');
 var newsResult2 = document.querySelector('.results');
 
-=======
 
 //feedback div
 var scoreResult = document.querySelector('.results');
@@ -28,7 +27,6 @@ var scoreResult2 = document.querySelector('.results');
 var newsResult = document.querySelector('.results');
 var newsResult2 = document.querySelector('.results');
 
->>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
 //output div
 var logsResult = document.querySelector('.output');
 var logsResult2 = document.querySelector('.output');
@@ -80,21 +78,11 @@ var results2 = [{
     {
         score3: 'Olando Pirates vs Golden Arrows (2-2)'
     }
-<<<<<<< HEAD
 
 ];
 
 var last5matches = [{
         match1: 'ManUtd vs Burnley(2-0)',
-
-=======
-
-];
-
-var last5matches = [{
-        match1: 'ManUtd vs Burnley(2-0)',
-
->>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
     },
     {
         match2: 'ManUtd vs Chelsea(2-0)',
