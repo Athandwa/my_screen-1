@@ -10,7 +10,6 @@ var resultsButton = document.getElementById('resultBtn');
 var logsButton2 = document.getElementById('logsBtn2');
 var newsButton2 = document.getElementById('newsBtn2');
 var resultsButton2 = document.getElementById('resultBtn2');
-<<<<<<< HEAD
 
 //feedback div
 var scoreResult = document.querySelector('.results');
@@ -19,7 +18,6 @@ var scoreResult2 = document.querySelector('.results');
 var newsResult = document.querySelector('.results');
 var newsResult2 = document.querySelector('.results');
 
-=======
 
 //feedback div
 var scoreResult = document.querySelector('.results');
@@ -28,7 +26,6 @@ var scoreResult2 = document.querySelector('.results');
 var newsResult = document.querySelector('.results');
 var newsResult2 = document.querySelector('.results');
 
->>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
 //output div
 var logsResult = document.querySelector('.output');
 var logsResult2 = document.querySelector('.output');
@@ -80,21 +77,14 @@ var results2 = [{
     {
         score3: 'Olando Pirates vs Golden Arrows (2-2)'
     }
-<<<<<<< HEAD
 
 ];
 
 var last5matches = [{
         match1: 'ManUtd vs Burnley(2-0)',
 
-=======
 
-];
 
-var last5matches = [{
-        match1: 'ManUtd vs Burnley(2-0)',
-
->>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
     },
     {
         match2: 'ManUtd vs Chelsea(2-0)',
@@ -201,35 +191,47 @@ var data2 = [{
 
 ];
 
-GoButton.addEventListener('click', function() {
-    var league = document.querySelector(".theLeague:checked").value;
-    console.log(league);
-    var show = document.querySelector('.hide');
+var leagues = document.querySelectorAll('.league');
 
-   var league;
-    switch (league) {
-        case theLeague:
-            league = "ABSA_PREMIER_LEAGUE";
-            break;
-        case theLeague:
-            league = "BARCLAYS_PREMIER_LEAGUE";
+GoButton.addEventListener('click', function() {
+
+    // get all the league sections in the DOM
+    var leagueName = document.querySelector(".theLeague:checked").value;
+
+    //hides all the leagues
+    for (var i = 0; i < leagues.length; i++) {
+      var theLeague = leagues[i];
+      theLeague.classList.remove('show');
     }
 
+    //showing the right one
+    var leagueElem = document.querySelector("." + leagueName);
+    leagueElem.classList.add('show');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
-     if(theLeague === 'ABSA_PREMIER_LEAGUE'){
-        return theLeague;
 
-       }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
-        return theLeague;
-     };
+    //var show = document.querySelector('.hide');
 
-    show.classList.add('show');
-    show.classList.remove('hide');
-    console.log(show);
+  //  var league;
+  //   switch (league) {
+  //       case theLeague:
+  //           league = "ABSA_PREMIER_LEAGUE";
+  //           break;
+  //       case theLeague:
+  //           league = "BARCLAYS_PREMIER_LEAGUE";
+  //   }
+   //
+   //
+  //    if(theLeague === 'ABSA_PREMIER_LEAGUE'){
+  //       return theLeague;
+   //
+  //      }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
+  //       return theLeague;
+  //    };
+
+    //show.classList.add('show');
+    //show.classList.remove('hide');
+    //console.log(show);
 
     // }else if(theLeague === 'BARCLAYS_PREMIER_LEAGUE'){
     // return theLeague;
