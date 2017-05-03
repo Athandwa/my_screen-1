@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
 body {
   align-items: center;
   align-content: center;
@@ -38,6 +41,7 @@ table, th ,td {
     -moz-transition: 300ms ease-in-out;
     transition: 300ms ease-in-out;
 }
+
 #logsBtn:hover {
 
   background-color: #39698B;
