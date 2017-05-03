@@ -216,10 +216,7 @@ GoButton.addEventListener('click', function() {
     }
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a055f4b07e6221a6b60fd7931a001635ad77f5f4
      if(theLeague === 'ABSA_PREMIER_LEAGUE'){
         return theLeague;
 
