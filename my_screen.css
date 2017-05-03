@@ -2,10 +2,10 @@ body {
   align-items: center;
   align-content: center;
   background: skyblue; /* For browsers that do not support gradients */
-      background: -webkit-linear-gradient(silver, skyblue, black); /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(silver,skyblue, black); /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(silver, skyblue, black); /* For Firefox 3.6 to 15 */
-      background: linear-gradient(silver,skyblue, black); /* Standard syntax */
+      background: -webkit-linear-gradient(silver, skyblue, white); /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(silver,skyblue, white); /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(silver, skyblue, white); /* For Firefox 3.6 to 15 */
+      background: linear-gradient(silver,skyblue, white); /* Standard syntax */
 }
 .container {
   align-items: center;
@@ -23,7 +23,7 @@ table, th ,td {
 #logsBtn {
   align-content: center;
     position: center;
-    margin: 0px 550px;
+    margin: 0px 650px;
     background-color: #000000;
 	color: #fff;
 	width: 150px;
@@ -51,7 +51,7 @@ table, th ,td {
 #newsBtn {
   align-content: center;
     position: absolute;
-    margin: 0px 550px;
+    margin: 0px 650px;
     background-color: #000000;
 	color: #fff;
 	width: 150px;
@@ -81,13 +81,12 @@ table, th ,td {
 	justify-content: center;
 	width: 100%;
 	height: 300px;
-  background-color: #100100100;
 
   }
 
   #resultBtn {
       position: absolute;
-      margin: 0px 550px;
+      margin: 0px 650px;
       background-color: #000000;
   	color: #fff;
   	width: 150px;
@@ -111,14 +110,20 @@ table, th ,td {
      -moz-transition: 150ms ease-in-out;
      transition: 150ms ease-in-out;
   }
+
   h2 {
     text-align: center;
+    text-decoration: underline;
+
   }
   h3 {
     text-align: center;
+    text-decoration: underline;
+
   }
   h4 {
     text-align: center;
+    text-decoration: underline;
   }
   p {
     text-align:center;
@@ -161,7 +166,7 @@ div.BARCLAYS_PREMIER_LEAGUE {
 }
 #newsBtn2 {
     position: absolute;
-    margin: 0px 550px;
+    margin: 0px 650px;
     background-color: #000000;
   color: #fff;
   width: 150px;
@@ -187,7 +192,7 @@ div.BARCLAYS_PREMIER_LEAGUE {
 }
 #logsBtn2 {
     position: absolute;
-    margin: 0px 550px;
+    margin: 0px 650px;
     background-color: #000000;
   color: #fff;
   width: 150px;
@@ -214,7 +219,7 @@ div.BARCLAYS_PREMIER_LEAGUE {
 #resultBtn2 {
   align-content: center;
     position: absolute;
-    margin: 0px 550px;
+    margin: 0px 650px;
     background-color: #000000;
   color: #fff;
   width: 150px;
@@ -247,6 +252,6 @@ div.BARCLAYS_PREMIER_LEAGUE {
   display: none;
 }
 
-/*.show{
+.show{
   display: block;
-}*/
+}

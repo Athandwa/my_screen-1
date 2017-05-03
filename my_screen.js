@@ -184,21 +184,33 @@ var data2 = [{
 GoButton.addEventListener('click', function() {
     var league = document.querySelector(".theLeague:checked").value;
     console.log(league);
-    var show = document.getElementById('toggle/Show');
-    console.log(show);
-    /*
-    if(theLeague.value.length > 0 ){
-      console.log(theLeague.value);
-      var league = ''
-      if(radios[0].checked) {
-        league = 'ABSA PREMIER LEAGUE'
-      }else if (radios[1].checked){
-        league = 'BARCLAYS PREMIER LEAGUE'
-      }
-    }
-    */
+    var show = document.querySelector('.hide');
 
+   var league;
+    switch (league) {
+        case theLeague:
+            league = "ABSA_PREMIER_LEAGUE";
+            break;
+        case theLeague:
+            league = "BARCLAYS_PREMIER_LEAGUE";
+    }
+
+    
+     if(theLeague === 'ABSA_PREMIER_LEAGUE'){
+        return theLeague;
+    
+       }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
+        return theLeague;
+     };
+
+    show.classList.add('show');
+    show.classList.remove('hide');
+    console.log(show);
+
+    // }else if(theLeague === 'BARCLAYS_PREMIER_LEAGUE'){
+    // return theLeague;
 });
+
 resultsButton2.addEventListener('click', function() {
     var leagueResults = resultsTemplate2({
         results: results2,
