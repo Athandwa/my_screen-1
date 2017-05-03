@@ -232,6 +232,7 @@ GoButton.addEventListener('click', function() {
     // return theLeague;
 });
 
+
 resultsButton2.addEventListener('click', function() {
     var leagueResults = resultsTemplate2({
         results: results2,
