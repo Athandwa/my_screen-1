@@ -195,10 +195,11 @@ GoButton.addEventListener('click', function() {
             league = "BARCLAYS_PREMIER_LEAGUE";
     }
 
-    
+
+
      if(theLeague === 'ABSA_PREMIER_LEAGUE'){
         return theLeague;
-    
+
        }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
         return theLeague;
      };

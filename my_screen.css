@@ -37,6 +37,7 @@ table, th ,td {
     -moz-transition: 300ms ease-in-out;
     transition: 300ms ease-in-out;
 }
+
 #logsBtn:hover {
 
   background-color: #39698B;
