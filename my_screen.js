@@ -3,32 +3,32 @@ var radios = document.getElementById('league');
 
 var theLeague = document.querySelector('.theLeague');
 
-var logsButton = document.getElementById('logsBtn');
-var newsButton = document.getElementById('newsBtn');
-var resultsButton = document.getElementById('resultBtn');
+var barclaysLogsButton = document.getElementById('barclaysLog');
+var barclaysNewsButton = document.getElementById('barclaysNews');
+var barclaysResultsButton = document.getElementById('barclaysResults');
 
-var logsButton2 = document.getElementById('logsBtn2');
-var newsButton2 = document.getElementById('newsBtn2');
-var resultsButton2 = document.getElementById('resultBtn2');
-
-//feedback div
-var scoreResult = document.querySelector('.results');
-var scoreResult2 = document.querySelector('.results');
-
-var newsResult = document.querySelector('.results');
-var newsResult2 = document.querySelector('.results');
-
+var absaLogsButton = document.getElementById('absaLog');
+var absaNewsButton = document.getElementById('absaNews');
+var absaResultsButton = document.getElementById('absaResults');
 
 //feedback div
-var scoreResult = document.querySelector('.results');
-var scoreResult2 = document.querySelector('.results');
+var barclaysScoreResult = document.querySelector('.results');
+var absaScoreResult = document.querySelector('.results');
 
-var newsResult = document.querySelector('.results');
-var newsResult2 = document.querySelector('.results');
+var barclaysNewsResult = document.querySelector('.results');
+var absaNewsResult = document.querySelector('.results');
+
+
+//feedback div
+// var scoreResult = document.querySelector('.results');
+// var scoreResult2 = document.querySelector('.results');
+//
+// var newsResult = document.querySelector('.results');
+// var newsResult2 = document.querySelector('.results');
 
 //output div
-var logsResult = document.querySelector('.output');
-var logsResult2 = document.querySelector('.output');
+var barclaysLogsResult = document.querySelector('.output');
+var absaLogsResult = document.querySelector('.output');
 
 var source = document.querySelector('#info-template').innerHTML;
 var infoTemplate = Handlebars.compile(source)
@@ -208,44 +208,44 @@ GoButton.addEventListener('click', function() {
 
 });
 
-resultsButton2.addEventListener('click', function() {
+absaResultsButton.addEventListener('click', function() {
     var leagueResults = resultsTemplate2({
         results: results2,
     });
-    scoreResult2.innerHTML = leagueResults;
+    absaScoreResult.innerHTML = leagueResults;
 
 });
-resultsButton.addEventListener('click', function() {
+barclaysResultsButton.addEventListener('click', function() {
     var leagueResults = resultsTemplate({
         results: last5matches,
     });
-    scoreResult.innerHTML = leagueResults;
+    barclaysScoreResult.innerHTML = leagueResults;
 });
 
-newsButton.addEventListener('click', function() {
+barclaysNewsButton.addEventListener('click', function() {
     var leagueNews = infoTemplate({
         news: info,
         // news: info2,
     });
-    newsResult.innerHTML = leagueNews;
+    barclaysNewsResult.innerHTML = leagueNews;
     // console.log(newsResult.innerHTML);
 });
-newsButton2.addEventListener('click', function() {
+absaNewsButton.addEventListener('click', function() {
     var leagueNews = infoTemplate2({
         news: info2,
     });
-    newsResult2.innerHTML = leagueNews;
+    absaNewsResult.innerHTML = leagueNews;
 });
 
-logsButton.addEventListener('click', function() {
+barclaysLogsButton.addEventListener('click', function() {
     var leagueTable = template2({
         teams: data,
     });
-    logsResult.innerHTML = leagueTable;
+    barclaysLogsResult.innerHTML = leagueTable;
 });
-logsButton2.addEventListener('click', function() {
+absaLogsButton.addEventListener('click', function() {
     var leagueTable2 = template3({
         teams: data2,
     });
-    logsResult2.innerHTML = leagueTable2;
+    absaLogsResult.innerHTML = leagueTable2;
 });
