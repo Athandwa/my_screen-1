@@ -83,8 +83,6 @@ var results2 = [{
 var last5matches = [{
         match1: 'ManUtd vs Burnley(2-0)',
 
-
-
     },
     {
         match2: 'ManUtd vs Chelsea(2-0)',
@@ -208,33 +206,6 @@ GoButton.addEventListener('click', function() {
     var leagueElem = document.querySelector("." + leagueName);
     leagueElem.classList.add('show');
 
-
-
-    //var show = document.querySelector('.hide');
-
-  //  var league;
-  //   switch (league) {
-  //       case theLeague:
-  //           league = "ABSA_PREMIER_LEAGUE";
-  //           break;
-  //       case theLeague:
-  //           league = "BARCLAYS_PREMIER_LEAGUE";
-  //   }
-   //
-   //
-  //    if(theLeague === 'ABSA_PREMIER_LEAGUE'){
-  //       return theLeague;
-   //
-  //      }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
-  //       return theLeague;
-  //    };
-
-    //show.classList.add('show');
-    //show.classList.remove('hide');
-    //console.log(show);
-
-    // }else if(theLeague === 'BARCLAYS_PREMIER_LEAGUE'){
-    // return theLeague;
 });
 
 resultsButton2.addEventListener('click', function() {

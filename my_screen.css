@@ -20,63 +20,7 @@ table, th ,td {
   border-style: solid;
   /*border-radius: 50px;*/
 }
-#logsBtn {
-  align-content: center;
-    position: center;
-    margin: 0px 650px;
-    background-color: #000000;
-	color: #fff;
-	width: 150px;
-	height: 30px;
-    border: 1px solid #f0f0f0;
-    cursor: pointer;
-    -webkit-box-shadow: 1px 1px 1px 1px black;
-    -moz-box-shadow: 1px 1px 1px 1px black;
-    box-shadow: 1px 1px 1px 1px black;
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    transition: 300ms ease-in-out;
-}
 
-#logsBtn:hover {
-var info2 = [{
-
-  background-color: #39698B;
-  color: #fff000;
-  width: 90px;
-  border: 3px double-dotted #39698B;
-  cursor: pointer;
-  -webkit-transition: 150ms ease-in-out;
-   -moz-transition: 150ms ease-in-out;
-   transition: 150ms ease-in-out;
-}
-#newsBtn {
-  align-content: center;
-    position: absolute;
-    margin: 0px 650px;
-    background-color: #000000;
-	color: #fff;
-	width: 150px;
-	height: 30px;
-    border: 1px solid #f0f0f0;
-    cursor: pointer;
-    -webkit-box-shadow: 1px 1px 1px 1px black;
-    -moz-box-shadow: 1px 1px 1px 1px black;
-    box-shadow: 1px 1px 1px 1px black;
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    transition: 300ms ease-in-out;
-}
-#newsBtn:hover {
-  background-color: #39698B;
-  color: #fff000;
-  width: 70px;
-  border: 3px double-dotted #39698B;
-  cursor: pointer;
-  -webkit-transition: 150ms ease-in-out;
-   -moz-transition: 150ms ease-in-out;
-   transition: 150ms ease-in-out;
-}
 .output {
   display: flex;
 	align-items: center;
@@ -86,32 +30,6 @@ var info2 = [{
 
   }
 
-  #resultBtn {
-      position: absolute;
-      margin: 0px 650px;
-      background-color: #000000;
-  	color: #fff;
-  	width: 150px;
-  	height: 30px;
-      border: 1px solid #f0f0f0;
-      cursor: pointer;
-      -webkit-box-shadow: 1px 1px 1px 1px black;
-      -moz-box-shadow: 1px 1px 1px 1px black;
-      box-shadow: 1px 1px 1px 1px black;
-      -webkit-transition: 300ms ease-in-out;
-      -moz-transition: 300ms ease-in-out;
-      transition: 300ms ease-in-out;
-  }
-  #resultBtn:hover {
-    background-color: #39698B;
-    color: #fff000;
-    width: 70px;
-    border: 3px double-dotted #39698B;
-    cursor: pointer;
-    -webkit-transition: 150ms ease-in-out;
-     -moz-transition: 150ms ease-in-out;
-     transition: 150ms ease-in-out;
-  }
 
   h2 {
     text-align: center;
@@ -140,13 +58,63 @@ div.BARCLAYS_PL {
   background-repeat: no-repeat;
   background-position: left,top;
 }
+#newsBtn {
+  align-content: center;
+  position: absolute;
+  margin: 0px 650px;
+  background-color: #000000;
+  color: #fff;
+  width: 55px;
+  height: 30px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 1px 1px 1px 1px black;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+#resultBtn {
+  position: absolute;
+  margin: 0px 650px;
+  background-color: #000000;
+  color: #fff;
+  width: 55px;
+  height: 30px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 1px 1px 1px 1px black;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+#logsBtn {
+  align-content: center;
+  position: center;
+  margin: 0px 650px;
+  background-color: #000000;
+  color: #fff;
+  width: 55px;
+  height: 30px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 1px 1px 1px 1px black;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
 #GoBtn {
   align-content: center;
     position: center;
     background-color: #000000;
 	color: #fff;
 	width: 50px;
-	height: 25px;
+	height: 30px;
     border: 1px solid #f0f0f0;
     cursor: pointer;
     -webkit-box-shadow: 1px 1px 1px 1px black;
@@ -156,22 +124,12 @@ div.BARCLAYS_PL {
     -moz-transition: 300ms ease-in-out;
     transition: 300ms ease-in-out;
 }
-#GoBtn:hover {
-  background-color: #39698B;
-  color: #fff000;
-  width: 90px;
-  border: 3px double-dotted #39698B;
-  cursor: pointer;
-  -webkit-transition: 150ms ease-in-out;
-   -moz-transition: 150ms ease-in-out;
-   transition: 150ms ease-in-out;
-}
 #newsBtn2 {
     position: absolute;
     margin: 0px 650px;
     background-color: #000000;
   color: #fff;
-  width: 150px;
+  width: 55px;
   height: 30px;
     border: 1px solid #f0f0f0;
     cursor: pointer;
@@ -181,6 +139,59 @@ div.BARCLAYS_PL {
     -webkit-transition: 300ms ease-in-out;
     -moz-transition: 300ms ease-in-out;
     transition: 300ms ease-in-out;
+}
+#resultBtn2 {
+  align-content: center;
+  position: absolute;
+  margin: 0px 650px;
+  background-color: #000000;
+  color: #fff;
+  width: 55px;
+  height: 30px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 1px 1px 1px 1px black;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+#logsBtn2 {
+  position: absolute;
+  margin: 0px 650px;
+  background-color: #000000;
+  color: #fff;
+  width: 55px;
+  height: 30px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px 1px black;
+  box-shadow: 1px 1px 1px 1px black;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+#GoBtn:hover {
+  background-color: #39698B;
+  color: #fff000;
+  width: 90px;
+  border: 3px double-dotted #39698B;
+  cursor: pointer;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
+}
+#newsBtn:hover {
+  background-color: #39698B;
+  color: #fff000;
+  width: 70px;
+  border: 3px double-dotted #39698B;
+  cursor: pointer;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 #newsBtn2:hover {
   background-color: #39698B;
@@ -192,21 +203,26 @@ div.BARCLAYS_PL {
    -moz-transition: 150ms ease-in-out;
    transition: 150ms ease-in-out;
 }
-#logsBtn2 {
-    position: absolute;
-    margin: 0px 650px;
-    background-color: #000000;
-  color: #fff;
-  width: 150px;
-  height: 30px;
-    border: 1px solid #f0f0f0;
-    cursor: pointer;
-    -webkit-box-shadow: 1px 1px 1px 1px black;
-    -moz-box-shadow: 1px 1px 1px 1px black;
-    box-shadow: 1px 1px 1px 1px black;
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    transition: 300ms ease-in-out;
+#resultBtn:hover {
+  background-color: #39698B;
+  color: #fff000;
+  width: 70px;
+  border: 3px double-dotted #39698B;
+  cursor: pointer;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
+}
+#logsBtn:hover {
+
+  background-color: #39698B;
+  color: #fff000;
+  width: 90px;
+  border: 3px double-dotted #39698B;
+  cursor: pointer;
+  -webkit-transition: 150ms ease-in-out;
+  -moz-transition: 150ms ease-in-out;
+  transition: 150ms ease-in-out;
 }
 #logsBtn2:hover {
   background-color: #39698B;
@@ -217,23 +233,6 @@ div.BARCLAYS_PL {
   -webkit-transition: 150ms ease-in-out;
    -moz-transition: 150ms ease-in-out;
    transition: 150ms ease-in-out;
-}
-#resultBtn2 {
-  align-content: center;
-    position: absolute;
-    margin: 0px 650px;
-    background-color: #000000;
-  color: #fff;
-  width: 150px;
-  height: 30px;
-    border: 1px solid #f0f0f0;
-    cursor: pointer;
-    -webkit-box-shadow: 1px 1px 1px 1px black;
-    -moz-box-shadow: 1px 1px 1px 1px black;
-    box-shadow: 1px 1px 1px 1px black;
-    -webkit-transition: 300ms ease-in-out;
-    -moz-transition: 300ms ease-in-out;
-    transition: 300ms ease-in-out;
 }
 
 
