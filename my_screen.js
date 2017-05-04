@@ -3,33 +3,32 @@ var radios = document.getElementById('league');
 
 var theLeague = document.querySelector('.theLeague');
 
-var logsButton = document.getElementById('logsBtn');
-var newsButton = document.getElementById('newsBtn');
-var resultsButton = document.getElementById('resultBtn');
+var barclaysLogsButton = document.getElementById('barclaysLog');
+var barclaysNewsButton = document.getElementById('barclaysNews');
+var barclaysResultsButton = document.getElementById('barclaysResults');
 
-var logsButton2 = document.getElementById('logsBtn2');
-var newsButton2 = document.getElementById('newsBtn2');
-var resultsButton2 = document.getElementById('resultBtn2');
+var absaLogsButton = document.getElementById('absaLog');
+var absaNewsButton = document.getElementById('absaNews');
+var absaResultsButton = document.getElementById('absaResults');
+
+//feedback div
+var barclaysScoreResult = document.querySelector('.results');
+var absaScoreResult = document.querySelector('.results');
+
+var barclaysNewsResult = document.querySelector('.results');
+var absaNewsResult = document.querySelector('.results');
 
 
 //feedback div
-var scoreResult = document.querySelector('.results');
-var scoreResult2 = document.querySelector('.results');
-
-var newsResult = document.querySelector('.results');
-var newsResult2 = document.querySelector('.results');
-
-
-//feedback div
-var scoreResult = document.querySelector('.results');
-var scoreResult2 = document.querySelector('.results');
-
-var newsResult = document.querySelector('.results');
-var newsResult2 = document.querySelector('.results');
+// var scoreResult = document.querySelector('.results');
+// var scoreResult2 = document.querySelector('.results');
+//
+// var newsResult = document.querySelector('.results');
+// var newsResult2 = document.querySelector('.results');
 
 //output div
-var logsResult = document.querySelector('.output');
-var logsResult2 = document.querySelector('.output');
+var barclaysLogsResult = document.querySelector('.output');
+var absaLogsResult = document.querySelector('.output');
 
 var source = document.querySelector('#info-template').innerHTML;
 var infoTemplate = Handlebars.compile(source)
@@ -83,6 +82,7 @@ var results2 = [{
 
 var last5matches = [{
         match1: 'ManUtd vs Burnley(2-0)',
+
     },
     {
         match2: 'ManUtd vs Chelsea(2-0)',
@@ -189,75 +189,63 @@ var data2 = [{
 
 ];
 
-GoButton.addEventListener('click', function() {
-    var league = document.querySelector(".theLeague:checked").value;
-    console.log(league);
-    var show = document.querySelector('.hide');
+var leagues = document.querySelectorAll('.league');
 
-   var league;
-    switch (league) {
-        case theLeague:
-            league = "ABSA_PREMIER_LEAGUE";
-            break;
-        case theLeague:
-            league = "BARCLAYS_PREMIER_LEAGUE";
+GoButton.addEventListener('click', function() {
+
+    // get all the league sections in the DOM
+    var leagueName = document.querySelector(".theLeague:checked").value;
+
+    //hides all the leagues
+    for (var i = 0; i < leagues.length; i++) {
+      var theLeague = leagues[i];
+      theLeague.classList.remove('show');
     }
 
+    //showing the right one
+    var leagueElem = document.querySelector("." + leagueName);
+    leagueElem.classList.add('show');
 
-
-     if(theLeague === 'ABSA_PREMIER_LEAGUE'){
-        return theLeague;
-
-       }else if (theLeague === 'BARCLAYS_PREMIER_LEAGUE') {
-        return theLeague;
-     };
-
-    show.classList.add('show');
-    show.classList.remove('hide');
-    console.log(show);
-
-    // }else if(theLeague === 'BARCLAYS_PREMIER_LEAGUE'){
-    // return theLeague;
 });
 
-resultsButton2.addEventListener('click', function() {
+absaResultsButton.addEventListener('click', function() {
     var leagueResults = resultsTemplate2({
         results: results2,
     });
-    scoreResult2.innerHTML = leagueResults;
+    absaScoreResult.innerHTML = leagueResults;
 
 });
-resultsButton.addEventListener('click', function() {
+barclaysResultsButton.addEventListener('click', function() {
     var leagueResults = resultsTemplate({
         results: last5matches,
     });
-    scoreResult.innerHTML = leagueResults;
+    barclaysScoreResult.innerHTML = leagueResults;
 });
 
-newsButton.addEventListener('click', function() {
+barclaysNewsButton.addEventListener('click', function() {
     var leagueNews = infoTemplate({
         news: info,
         // news: info2,
     });
-    newsResult.innerHTML = leagueNews;
+    barclaysNewsResult.innerHTML = leagueNews;
     // console.log(newsResult.innerHTML);
 });
-newsButton2.addEventListener('click', function() {
+absaNewsButton.addEventListener('click', function() {
     var leagueNews = infoTemplate2({
         news: info2,
     });
-    newsResult2.innerHTML = leagueNews;
+    absaNewsResult.innerHTML = leagueNews;
 });
 
-logsButton.addEventListener('click', function() {
+barclaysLogsButton.addEventListener('click', function() {
     var leagueTable = template2({
         teams: data,
     });
-    logsResult.innerHTML = leagueTable;
+    barclaysLogsResult.innerHTML = leagueTable;
 });
-logsButton2.addEventListener('click', function() {
+absaLogsButton.addEventListener('click', function() {
     var leagueTable2 = template3({
         teams: data2,
     });
-    logsResult2.innerHTML = leagueTable2;
+    absaLogsResult.innerHTML = leagueTable2;
 });
